@@ -12,9 +12,6 @@ export default function Home() {
       <hr className="opacity-20"/>
       <Header/>
       </div>
-      <div>Hello</div>
-      <div>hello</div>
-
       </div>
   );
 }
