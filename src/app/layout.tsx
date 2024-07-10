@@ -16,7 +16,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <head>
+      <link rel="preload" href="/assets/font/61b81e7bde89ba40-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" data-next-font="size-adjust" />
+      <link rel="preload" href="/assets/font/d36a2a2bb416f59e-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" data-next-font="size-adjust" />
+      <link rel="preload" href="/assets/font/c04551857776278f-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" data-next-font="size-adjust" />
+      <link rel="preload" href="/assets/font/916d3686010a8de2-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" data-next-font="size-adjust" />
+      <link rel="preload" href="/assets/font/d869208648ca5469-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" data-next-font="size-adjust" />
+      <link rel="preload" href="/assets/font/9a881e2ac07d406b-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" data-next-font="size-adjust" />
+      <link rel="preload" href="/assets/font/376dd8dc38524313-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" data-next-font="size-adjust" />
+      <link rel="preload" href="/assets/font/bd427f25ac24d036-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" data-next-font="size-adjust" />
+
+      <link rel="stylesheet" href="/globals.css" data-n-g="" />
+      </head> */}
+    
       <body className={inter.className}>{children}</body>
     </html>
-  );
-}
+  );}

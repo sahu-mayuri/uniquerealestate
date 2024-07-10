@@ -8,10 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors:{
+        'color-orange':'#FF5A3C',
+      },
+      fontFamily: {
+        headfont: ['__Nunito_Sans_601d73', '__Nunito_Sans_Fallback_601d73'],
+        bodyfont:['Nunito Sans', 'sans-serif'],
       },
     },
   },
