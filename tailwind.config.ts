@@ -9,9 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors:{
-        'light-white':'#F5F6F7',
+        'light-white':'#FFFFFF',
         'pink':'#FFEEEB',
         'color-orange':'#FF5A3C',
+        'slider-background-color' : '#F8F8F9',
       },
       fontFamily: {
         headfont: ['__Nunito_Sans_601d73', '__Nunito_Sans_Fallback_601d73'],
@@ -21,7 +22,7 @@ const config: Config = {
         popins_black:['bd427f25ac24d036-s.p.ttf'],
 
       },
-    
+      
     },
   },
   plugins: [],

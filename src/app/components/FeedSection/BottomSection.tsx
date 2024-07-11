@@ -1,11 +1,18 @@
-import Card from "../../../../../real_estate_project(NEXT)/src/app/components/Cards/Card";
+
+import Card from "../Cards/Card";
+import Slider from "../Slider/Slider";
+
 
 const BottomSection = () => {
   return (
     <div className="bottom-section ">
-     <Card></Card>
+     {/* <Card></Card> */}
+     <Slider></Slider>
+
     </div>
   );
 };
 
 export default BottomSection;
+
+

@@ -1,7 +1,7 @@
 
 const TopSection = () => {
   return (
-    <div className="feed-section bg-light-white">
+    <div className="feed-section bg-light-white ">
         <div className="container w-full pt-5">
             <div id="content" className='flex flex-col items-center'>
                 <div id="text" className=' py-2 px-3 rounded-[50px] bg-pink mb-4'>
