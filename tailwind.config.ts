@@ -9,12 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors:{
+        'light-white':'#F5F6F7',
+        'pink':'#FFEEEB',
         'color-orange':'#FF5A3C',
       },
       fontFamily: {
         headfont: ['__Nunito_Sans_601d73', '__Nunito_Sans_Fallback_601d73'],
         bodyfont:['Nunito Sans', 'sans-serif'],
+        popins:['9a881e2ac07d406b-s.p.woff2'],
+        popins_extrabold:['376dd8dc38524313-s.p.ttf'],
+        popins_black:['bd427f25ac24d036-s.p.ttf'],
+
       },
+    
     },
   },
   plugins: [],
