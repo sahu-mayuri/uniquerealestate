@@ -11,6 +11,7 @@ const config: Config = {
       colors:{
         'light-white':'#FFFFFF',
         'pink':'#FFEEEB',
+        'lightPink':'#FFF2F0',
         'color-orange':'#FF5A3C',
         'slider-background-color' : '#F8F8F9',
       },
