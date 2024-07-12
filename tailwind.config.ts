@@ -25,7 +25,12 @@ const config: Config = {
         poppinsExtraBold: ['Poppins ExtraBold', 'ans-serif'],
         poppinsBlack: ['Poppins Black', 'ans-serif'],
         icomoon:['icomoon'],
-
+        nunitoLight:['Nunito Light'],
+        nunito_Medium:['Nunito Medium'],
+        nunito_SemiBold:['Nunito SemiBold'],
+        nunito_ExtraBold:['Nunito ExtraBold'],
+        nunito_Bold:['Nunito'],
+        nunito_Black:['Nunito Black'],
       },
       
     },
