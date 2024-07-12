@@ -3,9 +3,9 @@
 const TopFooter = () => {
   return (
     <div>
-      <div id="top-footer-container" className="w-full relative">
+      <div id="top-footer-container" className="w-full relative ">
         <div id="top" className="w-full h-36 bg-light-white"></div>
-        <div id="bottom" className="w-full h-28 bg-black "></div>
+        <div id="bottom" className="w-full h-28 bg-black"></div>
 
         <div
           id="top-layer"

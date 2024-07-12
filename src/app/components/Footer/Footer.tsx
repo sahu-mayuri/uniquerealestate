@@ -1,19 +1,17 @@
 import React from "react";
 import CopyRight from "./CopyRight";
 
+
+
 export default function App() {
   return (
-    <div id="footer-container">
-      <div className='bg-black p-6 text-white'>
+    <div id="footer-container ">
+      <div className='bg-black p-6 pt-10 text-white'>
         <div id="footer-container" className='grid grid-cols-1 w-full  md:grid-cols-2 lg:flex lg:flex-wrap '>
-            <div id='c1' className='w-full lg:w-[23%] h-full ' >
+            <div id='c1' className='w-full lg:w-[23%] h-full mb-6' >
             <div>
-                  <div id="footer_logo">
-                    <img
-                      src="/assets/Images/logo-2.png"
-                      alt=""
-                      className="mb-2"
-                    />
+                  <div id="footer_logo" className="bg-red-500 size-10">
+                    <img src="/public/images/logo-2.png" alt="" />
                   </div>
                   <p className=" text-[0.9rem] md:text-[1rem] lg:text-[1rem] mb-[1.5rem] leading-7 text-start text-white">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -255,7 +253,7 @@ export default function App() {
                       <a className=" font-bold">We accept</a>
                     </li>
                     <li>
-                      <img src="/assets/Images/payment-4.png" alt="" />
+                      <img id="lll" className="size-10 bg-green-500" src="../img/payment-4.png" alt="" />
                     </li>
                   </ul>
             </div>
