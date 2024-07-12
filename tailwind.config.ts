@@ -15,16 +15,34 @@ const config: Config = {
         'slider-background-color' : '#F8F8F9',
       },
       fontFamily: {
-        headfont: ['__Nunito_Sans_601d73', '__Nunito_Sans_Fallback_601d73'],
-        bodyfont:['Nunito Sans', 'sans-serif'],
-        popins:['9a881e2ac07d406b-s.p.woff2'],
-        popins_extrabold:['376dd8dc38524313-s.p.ttf'],
-        popins_black:['bd427f25ac24d036-s.p.ttf'],
+        bodyfont:['__Nunito_Sans_601d73','__Nunito_Sans_Fallback_601f73'],
+        headfont:['Nunito Sans', 'sans-serif'],
+        flaticon: ['flaticon'],
+        poppins: ['Poppins', 'ans-serif'],
+        poppinsSemibold: ['Poppins SemiBold', 'ans-serif'],
+        poppinsExtraLight: ['Poppins ExtraLight', 'ans-serif'],
+        poppinsLight: ['Poppins Light', 'ans-serif'],
+        poppinsExtraBold: ['Poppins ExtraBold', 'ans-serif'],
+        poppinsBlack: ['Poppins Black', 'ans-serif'],
+        icomoon:['icomoon'],
 
       },
       
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          /* Firefox */
+          'scrollbar-width': 'none',
+          /* Safari and Chrome */
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+        },
+      });
+    }
+  ],
 };
 export default config;
