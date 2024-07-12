@@ -8,27 +8,15 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
+import HomeHoverDropdown from './HomeHoverDropdown'
+import AboutHoverDropdown from './AboutHoverDropdown'
+import NewsHoverDropdown from './NewsHoverDropdown'
+import PropertyHoverDropdown from './PropertyHoverDropDown'
 
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const homeList = [
-    { id: '1', name: 'Home Style 01' },
-    { id: '2', name: 'Home Style 02' },
-    { id: '3', name: 'Home Style 03' },
-    { id: '4', name: 'Home Style 04' },
-    { id: '5', name: 'Home Style 05' },
-    { id: '6', name: 'Home Style 06' },
-  ];
-  const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
   
-  const toggleDropdown = () => {
-    setIsHomeDropdownOpen(!isHomeDropdownOpen);
-  };
-
-  const closeDropdown = () => {
-    setIsHomeDropdownOpen(false);
-  };
   return (
     <header >
       <nav className="w-full px-2 flex items-center justify-between py-1 lg:py-6 lg:px-4" aria-label="Global">
@@ -54,53 +42,24 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-10 lg:mr-24 ">
         
-            
-            
-                <div className='flex flex-row items-center'>
-              <a className="my-2 text-lg font-bold font-bodyfont text-white">
-                Home
-              </a>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3 w-3 text-white">
-                  <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
-                </svg></span>
-                </div>    
+            <div>
+              <HomeHoverDropdown/>
+            </div>
                 
-            
-             
-          
-          <div className='flex flex-row items-center'>
-              <a className="my-2 text-lg font-bold font-bodyfont text-white">
-                About
-              </a>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3 w-3 text-white">
-                  <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
-                </svg></span>
+                <div>
+              <AboutHoverDropdown/>
+            </div>
+            <div>
+              <PropertyHoverDropdown/>
+            </div>
+
+            <div>
+              <NewsHoverDropdown/>
             </div>
             
-            <div className='flex flex-row items-center'>
-              <a className=" my-2 text-lg font-bold font-bodyfont text-white">
-                Property
-              </a>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3 w-3 text-white">
-                  <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
-                </svg></span>
-            </div>
             
             <div className='flex flex-row items-center'>
-              <a className="my-2 text-lg font-bold font-bodyfont text-white">
-                News
-              </a>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3 w-3 text-white">
-                  <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
-                </svg></span>
-            </div>
-            
-            <div className='flex flex-row items-center'>
-              <a className="my-2 text-lg font-bold font-bodyfont text-white">
+              <a className="my-2 text-lg font-semibold text-white">
                 Pages
               </a>
               <span>
@@ -110,13 +69,14 @@ export default function Header() {
             </div>
             
             <div className='flex items-center'>
-              <a className="my-2 text-lg font-bold font-bodyfont text-white">
+              <a className="my-2 text-lg font-semibold text-white">
                 Contact
               </a>
             </div>
             <div className='flex items-center'>
-              <button className='my-2 text-lg font-bold font-bodyfont text-white bg-color-orange px-7 py-3 hover:text-black hover:bg-white'>Add Listing</button>
+              <button className='my-2 text-lg font-semibold text-white bg-color-orange px-7 py-3 hover:text-black hover:bg-white'>Add Listing</button>
             </div>
+            
         </div>
       </nav>
       <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
