@@ -13,7 +13,7 @@ export default function App() {
                   <div id="footer_logo" className="bg-red-500 size-10">
                     <img src="/public/images/logo-2.png" alt="" />
                   </div>
-                  <p className=" text-[0.9rem] md:text-[1rem] lg:text-[1rem] mb-[1.5rem] leading-7 text-start text-white">
+                  <p className=" text-[0.9rem] md:text-[1rem] lg:text-[1rem] mb-[1.5rem] leading-7 text-start text-white pr-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Voluptas nesciunt explicabo, reprehenderit{" "}
                   </p>

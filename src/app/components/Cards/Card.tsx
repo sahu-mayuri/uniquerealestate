@@ -2,7 +2,7 @@
 
 const Card = () => {
   return (
-    <div id="card-container" className="w-[19.5rem]  bg-white   md:w-[27.1rem] lg:w-[21.25rem]">
+    <div id="card-container" className="w-[19.5rem]  bg-white   md:w-[27.1rem] lg:w-[21.25rem] xl:w-[25.5rem]">
         <div id="image-container" className="w-full h-[13.5rem]  bg-green-500 md:h-[18rem]">
             <img className=" w-full h-full object-cover" src="https://imgs.search.brave.com/Gj8wm0N7lLF3OI34pIiTMxdARdkBJ1xTDQQHmDtuDmU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9yZWFs/ZXN0YXRlZXhwb3N1/cmVzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8xMi8z/MjQtRS5GaWVsZHN0/b25lLTE3LXNjYWxl/ZC5qcGc" alt="" />
         </div>

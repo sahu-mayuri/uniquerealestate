@@ -1,12 +1,11 @@
 
-import Card from "../Cards/Card";
 import Slider from "../Slider/Slider";
 
 
 const BottomSection = () => {
   return (
-    <div className="bottom-section ">
-     {/* <Card></Card> */}
+    <div className="bottom-section lg:px-12">
+     
      <Slider></Slider>
 
     </div>
