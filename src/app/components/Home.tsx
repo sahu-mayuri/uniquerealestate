@@ -12,7 +12,7 @@ export default function Home() {
       <hr className=''/>
       <Header/>
       </div>
-      Hello World
+      
       
       </div>
   )
