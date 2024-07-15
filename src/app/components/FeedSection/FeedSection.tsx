@@ -4,7 +4,7 @@ import BottomSection from './BottomSection'
 const FeedSection = () => {
   return (
     <>
-      <TopSection></TopSection>
+      <TopSection top={'News And Blogs'} bottom={'Latest News Feeds'}></TopSection>
       <BottomSection></BottomSection>
     </>
   )
