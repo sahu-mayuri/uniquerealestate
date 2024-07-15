@@ -30,7 +30,7 @@ const config: Config = {
         nunito_Medium:['Nunito Medium'],
         nunito_SemiBold:['Nunito SemiBold'],
         nunito_ExtraBold:['Nunito ExtraBold'],
-        nunito_Bold:['Nunito'],
+        nunito_Bold:['Nunito Bold'],
         nunito_Black:['Nunito Black'],
       },
       screens: {
