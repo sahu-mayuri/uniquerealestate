@@ -30,13 +30,15 @@ const config: Config = {
         nunito_Medium:['Nunito Medium'],
         nunito_SemiBold:['Nunito SemiBold'],
         nunito_ExtraBold:['Nunito ExtraBold'],
-        nunito_Bold:['Nunito'],
+        nunito_Bold:['Nunito Bold'],
         nunito_Black:['Nunito Black'],
       },
       screens: {
         custom_screen: '1200px',
       },
-      
+      boxShadow: {
+        'box-shadow-4': '0 5px 20px 0 rgba(23,44,82,.1)',
+      },
     },
   },
   plugins: [
