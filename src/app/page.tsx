@@ -5,6 +5,8 @@ import Footer from "./components/Footer/Footer";
 import TopFooter from "./components/Footer/TopFooter";
 import FeedSection from "./components/FeedSection/FeedSection";
 import BuildingAminities from "./components/AminitiesSection/BuildingAminities";
+import AppartmentSection from "./components/AppartmentPlanSection/AppartmentSection";
+
 
 export default function Home() {
   return (
@@ -19,7 +21,7 @@ export default function Home() {
           <Header />
         </div>
       </div>
-      
+      <AppartmentSection></AppartmentSection>
       <BuildingAminities></BuildingAminities>
       <FeedSection ></FeedSection>
       <TopFooter></TopFooter>
