@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer/Footer";
 import TopFooter from "./components/Footer/TopFooter";
 import FeedSection from "./components/FeedSection/FeedSection";
-import BuildingAminities from "./components/BuildingAminities";
+import BuildingAminities from "./components/AminitiesSection/BuildingAminities";
 
 export default function Home() {
   return (
