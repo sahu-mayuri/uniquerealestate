@@ -36,7 +36,9 @@ const config: Config = {
       screens: {
         custom_screen: '1200px',
       },
-      
+      boxShadow: {
+        'box-shadow-4': '0 5px 20px 0 rgba(23,44,82,.1)',
+      },
     },
   },
   plugins: [
