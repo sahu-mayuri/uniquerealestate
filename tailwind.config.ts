@@ -33,6 +33,9 @@ const config: Config = {
         nunito_Bold:['Nunito'],
         nunito_Black:['Nunito Black'],
       },
+      screens: {
+        custom_screen: '1200px',
+      },
       
     },
   },
