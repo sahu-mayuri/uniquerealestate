@@ -5,7 +5,7 @@ const TopFooter = () => {
     <div>
       <div id="top-footer-container" className="w-full relative mt-10">
         <div id="top" className="w-full h-36 bg-light-white"></div>
-        <div id="bottom" className="w-full h-28 bg-[#171B2A]"></div>
+        <div id="bottom" className="w-full h-44 bg-[#171B2A] "></div>
 
         <div
           id="top-layer"
