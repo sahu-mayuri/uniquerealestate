@@ -1,8 +1,9 @@
 "use client"
 import React, { useState, useRef } from 'react'
-import Card from '../Cards/Card'
+import FeaturesCard from '../Cards/FeaturesCard'
+import TopSection from '../FeedSection/TopSection'
 
-const Slider = () => {
+const FeatureSlider = () => {
   const [slideIndex, setSlideIndex] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
 
@@ -30,6 +31,7 @@ const Slider = () => {
 
   return (
     <div>
+        <TopSection top={'Properties'} bottom={'Feature Listing'}></TopSection>
       <div id="slider" className='w-full px-4 lg:px-9 '>
 
         <div id="sliding-div" className='group w-full relative  bg-slider-background-color lg:px-2 '>
@@ -37,19 +39,19 @@ const Slider = () => {
           <div ref={carouselRef} id="cards" className='w-full   flex py-2 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide'>
 
             <div id="box1" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 pr-3 bg-slider-background-color  '>
-                <Card></Card>
+                <FeaturesCard></FeaturesCard>
             </div>
             <div id="box2" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
-            <Card></Card>
+            <FeaturesCard></FeaturesCard>
             </div>
             <div id="box3" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
-            <Card></Card>
+            <FeaturesCard></FeaturesCard>
             </div>
             <div id="box4" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
-            <Card></Card>
+            <FeaturesCard></FeaturesCard>
             </div>
             <div id="box5" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 pl-3 bg-slider-background-color '>
-            <Card></Card>
+            <FeaturesCard></FeaturesCard>
             </div>
 
             {/* Slider controls */}
@@ -83,4 +85,4 @@ const Slider = () => {
   )
 }
 
-export default Slider;
+export default FeatureSlider;
