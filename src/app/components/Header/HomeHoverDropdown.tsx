@@ -19,7 +19,7 @@ export default function HomeHoverDropdown() {
     <div className="relative group">
       <div className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none font-montserrat">
       <div className='flex flex-row items-center justify-center'>
-              <a className="my-2 text-lg font-semibold text-white">
+              <a className="my-2 text-base xl:text-lg font-semibold text-white">
                 Home
               </a>
               <span>

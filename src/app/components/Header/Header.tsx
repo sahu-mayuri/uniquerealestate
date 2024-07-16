@@ -20,19 +20,19 @@ export default function Header() {
   return (
     <header >
       <nav className="w-full px-2 flex items-center justify-between py-1 lg:py-6 lg:px-4" aria-label="Global">
-        <div className="flex pt-6 px-2 md:pt-0 md:px-0">
-
-          <a href="#" className="lg:ms-24">
+        <div className="flex pt-6 px-1 min-[520px]:px-12 md:px-12 lg:px-24 custom_screen:pt-0">
+        {/* <div className="flex pt-6 px-2 md:pt-0 md:px-0"></div> */}
+          <a href="#" >
             
               <img src='https://quarter-nextjs.vercel.app/img/logo-2.png' />
             
         
           </a>
         </div>
-        <div className="flex pt-6 px-3 lg:hidden">
+        <div className="flex pt-6 px-1 min-[520px]:px-12 lg:px-24 custom_screen:pt-0 custom_screen:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            className="-m-4 inline-flex items-center justify-center rounded-md p-2.5 text-white"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -40,7 +40,7 @@ export default function Header() {
             {/* Insert your Bars3Icon component or icon here */}
           </button>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-10 lg:mr-24 ">
+        <div className="hidden custom_screen:flex custom_screen:flex-1 custom_screen:justify-end custom_screen:gap-x-9 xl:gap-x-10 custom_screen:mr-24 ">
         
             <div>
               <HomeHoverDropdown/>
@@ -59,7 +59,7 @@ export default function Header() {
             
             
             <div className='flex flex-row items-center'>
-              <a className="my-2 text-lg font-semibold text-white">
+              <a className="my-2 text-base xl:text-lg  font-semibold text-white">
                 Pages
               </a>
               <span>
@@ -69,17 +69,17 @@ export default function Header() {
             </div>
             
             <div className='flex items-center'>
-              <a className="my-2 text-lg font-semibold text-white">
+              <a className="my-2 text-base xl:text-lg  font-semibold text-white">
                 Contact
               </a>
             </div>
             <div className='flex items-center'>
-              <button className='my-2 text-lg font-semibold text-white bg-color-orange px-7 py-3 hover:text-black hover:bg-white'>Add Listing</button>
+              <button className='my-2 text-sm font-semibold text-nowrap text-white bg-color-orange px-7 py-3 hover:text-black hover:bg-white'>Add Listing</button>
             </div>
             
         </div>
       </nav>
-      <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
+      <Dialog className="custom_screen:hidden" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">

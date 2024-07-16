@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#customSliderLeft::-webkit-slider-thumb {
+    pointer-events:auto;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    -webkit-appearance:none;
+    @apply bg-color-orange;
+}
+#customSliderRight::-webkit-slider-thumb {
+    pointer-events:auto;
+    width:100px;
+    height: 50px;
+    -webkit-appearance:none;
+    background-image: url('/images/car.png');
+    background-size: cover;
+    background-position: center;
+}
