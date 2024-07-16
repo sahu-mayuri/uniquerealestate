@@ -6,66 +6,62 @@ import Tabs from './Tabs';
 const AppartmentSection = () => {
   return (
     <div>
-      <TopSection top={'Apartment Sketch'} bottom={'Apartments Plans'} ></TopSection>
-      <div id="bottom-section" className='w-full px-4 lg:px-20'>
-        {/* <div id="tab-nav" className='w-full  pl-32 pr-44 flex justify-between'>
-          <Tabs text={'The Studio'}></Tabs>
-          <Tabs text={'Delux Portion'}></Tabs>
-          <Tabs text={'Penthouse'}></Tabs>
-          <Tabs text={'Top Garden'}></Tabs>
-          <Tabs text={'Double Height'}></Tabs>
-        </div> */}
-
-
-        <div id="content-section" className='w-full  py-1 mt-10 lg:flex lg:justify-center lg:items-center '>
-          <div id="text" className='w-full lg:w-[45%] text-white mb-16 lg:mb-0 bg-color-orange px-5 py-6 lg:px-16 lg:py-14 '>
-
-            <h1 className='pl-1 font-poppins font-bold text-[1.25rem] lg:text-[1.9rem] mb-4'>Delux Portion</h1>
+        <TopSection top={'Apartment Sketch'} bottom={'Apartments Plan'} />
+        <div className='w-full'>
+    
+          <div id="Navigation-tags" className='w-full py-5 px-12 md:px-32 md:pb-12 md:pt-0 lg:px-44 flex justify-evenly flex-wrap gap-7 leading-3 mb-5 md:mb-0'>
             
-            <p className='pl-1  font-nunito_Medium mb-6 lg:mb-10 leading-7 text-[0.86rem] lg:text-[1rem]'>Enimad minim veniam quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo eiusmod tempor.Incididunt labore et dolore magna aliqua. sed ayd minim veniam.</p>
-
-            <ul className='pl-1  leading-8'>
-
-              <div id="border"  className='w-full font-nunito_SemiBold flex justify-between lg:mb-2'>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>Total area</h1>
-                <hr className='bg-white'/>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>2800 Sq. Ft</h1>
-              </div>
-
-              <div id="border"  className='w-full font-nunito_SemiBold flex justify-between lg:mb-2'>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>Total area</h1>
-                <hr className=''/>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>2800 Sq. Ft</h1>
-              </div>
-
-              <div id="border"  className='w-full font-nunito_SemiBold flex justify-between lg:mb-2'>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>Total area</h1>
-                <hr className=''/>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>2800 Sq. Ft</h1>
-              </div>
-
-              <div id="border"  className='w-full font-nunito_SemiBold flex justify-between lg:mb-2'>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>Total area</h1>
-                <hr className=''/>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>2800 Sq. Ft</h1>
-              </div>
-
-              <div id="border"  className='w-full font-nunito_SemiBold flex justify-between lg:mb-2'>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>Total area</h1>
-                <hr className=''/>
-                <h1 className='text-[0.85rem] lg:text-[1rem]'>2800 Sq. Ft</h1>
-              </div>
-              
-            </ul>
+            <Tabs text={'The Studio'}></Tabs>
+            <Tabs text={'Delux Portion'}></Tabs>
+            <Tabs text={'Penthouse'}></Tabs>
+            <Tabs text={'Top Garden'}></Tabs>
+            <Tabs text={'Double Height'}></Tabs>
           </div>
-
-          <div id="image" className='h-[26rem] lg:h-[34rem] lg:w-[55%] lg:px-16 lg:py-[2.9rem] xl:py-0 bg-green-300'>
-            <img className="size-full object-contain" src="/images/10.png" alt="" />
+    
+          <div className='px-4 md:px-36 lg:px-20 lg:py-10 lg:flex lg:items-stretch '>
+    
+            <div id="content" className='w-full  lg:w-[50%] bg-orange-500 text-white p-7 md:p-16 lg:p-16 flex flex-col justify-center lg:mr-10 lg:shrink-0'>
+              <h2 className='font-poppins font-bold text-[1.25rem] lg:text-[1.9rem] mb-4'>Deluxe Portion</h2>
+              <p className='font-nunito_Medium mb-6 lg:mb-10 leading-7 text-[0.86rem] lg:text-[1rem] pr-1'>Enimad minim veniam quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo eiusmod tempor. Incididunt labore et dolore magna aliqua. sed ayd minim veniam.</p>
+    
+              <div id="dets-container" className='leading-9 text-[0.85rem]'>
+                <div id="dets" className='flex items-center'>
+                  <h1 className='pr-1 shrink-0'>Total Area</h1>
+                  <div id="border" className='w-[90%] border-b border-dashed border-white'></div>
+                  <h1 className='pl-1 shrink-0'>2800 Sq. Ft</h1>
+                </div>
+                <div id="dets" className='flex items-center'>
+                  <h1 className='pr-2 shrink-0'>Bedroom</h1>
+                  <div id="border" className='w-[90%] border-b border-dashed border-white'></div>
+                  <h1 className='pl-2 shrink-0'>150 Sq. Ft</h1>
+                </div>
+                <div id="dets" className='flex items-center'>
+                  <h1 className='pr-1 shrink-0'>Bathroom</h1>
+                  <div id="border" className='w-[90%] border-b border-dashed border-white'></div>
+                  <h1 className='pl-1 shrink-0'>45 Sq. Ft</h1>
+                </div>
+                <div id="dets" className='flex items-center'>
+                  <h1 className='pr-1 shrink-0'>Belcony/Pets</h1>
+                  <div id="border" className='w-[90%] border-b border-dashed border-white'></div>
+                  <h1 className='pl-1 shrink-0'>Allowed</h1>
+                </div>
+                <div id="dets" className='flex items-center'>
+                  <h1 className='pr-1 shrink-0'>Lounge</h1>
+                  <div id="border" className='w-[90%] border-b border-dashed border-white'></div>
+                  <h1 className='pl-1 shrink-0'>650 Sq. Ft</h1>
+                </div>
+              </div>
+            </div>
+    
+            <div id="image" className='w-full lg:w-[50%] mt-12 lg:mt-0 lg:flex lg:items-center lg:shrink-0'>
+              <div id="img" className='w-full h-[30rem] object-contain'>
+                <img src="/images/10.png" alt="" className='w-full h-full object-contain' />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  )
-}
+        </div>
+      );
+    }
 
 export default AppartmentSection;
