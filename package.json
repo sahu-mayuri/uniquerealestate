@@ -16,12 +16,15 @@
     "@heroicons/react": "^2.1.4",
     "@mui/icons-material": "^5.16.0",
     "@mui/material": "^5.16.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.3.2",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",

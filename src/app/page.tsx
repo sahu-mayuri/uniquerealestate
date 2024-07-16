@@ -1,9 +1,14 @@
 import Image from "next/image";
-import NavBarHead from "./components/NavBarHead";
-import Header from "./components/Header";
+import NavBarHead from "./components/Header/NavBarHead";
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import TopFooter from "./components/Footer/TopFooter";
 import FeedSection from "./components/FeedSection/FeedSection";
+import BuildingAminities from "./components/AminitiesSection/BuildingAminities";
+import AppartmentSection from "./components/AppartmentPlanSection/AppartmentSection";
+import PropertySearchBox from "./components/Header/PropertySearchBox";
+import ButtonDropdown from "./components/Header/LocationButtonDropdown";
+
 
 export default function Home() {
   return (
@@ -16,9 +21,11 @@ export default function Home() {
           <NavBarHead />
           <hr className="opacity-20" />
           <Header />
+          <PropertySearchBox/>
         </div>
       </div>
-
+      <AppartmentSection></AppartmentSection>
+      <BuildingAminities></BuildingAminities>
       <FeedSection ></FeedSection>
       <TopFooter></TopFooter>
       <Footer></Footer>

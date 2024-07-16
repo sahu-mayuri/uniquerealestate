@@ -1,6 +1,5 @@
 "use client"
 import React, { useState, useRef } from 'react'
-import Card from '../Cards/Card'
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0)
