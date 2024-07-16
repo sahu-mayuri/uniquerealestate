@@ -8,12 +8,16 @@ import BuildingAminities from "./components/AminitiesSection/BuildingAminities";
 import AppartmentSection from "./components/AppartmentPlanSection/AppartmentSection";
 import PropertySearchBox from "./components/Header/PropertySearchBox";
 import ButtonDropdown from "./components/Header/LocationButtonDropdown";
+import Parallax from "./components/ParallaxSection/Parallax";
+import FeatureSection from "./components/FeatureSection/FeatureSection";
 
 
 export default function Home() {
   return (
-    <div className="bg-light-white">
-
+    <div className="bg-light-white relative">
+      <div id="parallaxImg" className="w-full h-screen top-0 fixed -z-10">
+        <img className="size-full object-cover" src="/images/11.jpg" alt="" />
+      </div>
       <div className="w-full h-[1000px] lg:h-[800px] relative">
         <div className='w-full h-[1000px] lg:h-[800px] bg-[url("/images/11.jpg")] bg-cover bg-no-repeat bg-center'></div>
         <div className=" absolute top-0 w-full h-[1000px] lg:h-[800px] bg-black opacity-50"></div>
@@ -24,7 +28,9 @@ export default function Home() {
           <PropertySearchBox/>
         </div>
       </div>
+      <FeatureSection></FeatureSection>
       <AppartmentSection></AppartmentSection>
+      <Parallax></Parallax>
       <BuildingAminities></BuildingAminities>
       <FeedSection ></FeedSection>
       <TopFooter></TopFooter>
