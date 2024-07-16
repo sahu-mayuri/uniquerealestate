@@ -8,6 +8,7 @@ import BuildingAminities from "./components/AminitiesSection/BuildingAminities";
 import AppartmentSection from "./components/AppartmentPlanSection/AppartmentSection";
 import PropertySearchBox from "./components/Header/PropertySearchBox";
 import ButtonDropdown from "./components/Header/LocationButtonDropdown";
+import ClientFeedback from "./components/FeedbackSection/ClientFeedback";
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       </div>
       <AppartmentSection></AppartmentSection>
       <BuildingAminities></BuildingAminities>
+      <ClientFeedback></ClientFeedback>
       <FeedSection ></FeedSection>
       <TopFooter></TopFooter>
       <Footer></Footer>
