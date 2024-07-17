@@ -5,11 +5,11 @@ import Tabs from './Tabs';
 
 const AppartmentSection = () => {
   return (
-    <div>
+    <div className='mt-28'>
         <TopSection top={'Apartment Sketch'} bottom={'Apartments Plan'} />
         <div className='w-full'>
     
-          <div id="Navigation-tags" className='w-full py-5 px-12 md:px-32 md:pb-12 md:pt-0 lg:px-44 flex justify-evenly flex-wrap gap-7 leading-3 mb-5 md:mb-0'>
+          <div id="Navigation-tags" className='w-full py-5 px-12 custom_small:px-32 custom_small:pb-12 custom_small:pt-0 lg:px-44 flex justify-evenly flex-wrap gap-7 leading-3 mb-5 md:mb-0'>
             
             <Tabs text={'The Studio'}></Tabs>
             <Tabs text={'Delux Portion'}></Tabs>

@@ -10,6 +10,7 @@ import PropertySearchBox from "./components/Header/PropertySearchBox";
 import ButtonDropdown from "./components/Header/LocationButtonDropdown";
 import Parallax from "./components/ParallaxSection/Parallax";
 import FeatureSection from "./components/FeatureSection/FeatureSection";
+import LatestListingSection from "./components/LatestListing/LatestListingSection";
 
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
           <PropertySearchBox/>
         </div>
       </div>
+      <LatestListingSection></LatestListingSection>
       <FeatureSection></FeatureSection>
       <AppartmentSection></AppartmentSection>
       <Parallax></Parallax>
