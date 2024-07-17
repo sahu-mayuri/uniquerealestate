@@ -60,7 +60,7 @@ export default function PropertyHoverDropdown() {
               </span>
             </div>  
           </div>
-          <div className={`absolute z-10 ${showOtherPages ? 'block' : 'hidden'} bg-grey-200 group-hover:block`} onMouseLeave={closeDropdown}>
+          <div className={`absolute z-10 ${showOtherPages ? 'block' : 'hidden'} top-20 bg-grey-200 group-hover:block`} onMouseLeave={closeDropdown}>
             <div className='w-full h-[0.340rem] bg-color-orange'></div>
             <div className="w-[15rem] pl-8 pt-6 pb-6 bg-white shadow-lg">
               <div className="grid grid-cols-1 gap-5 cursor-pointer">

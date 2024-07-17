@@ -6,17 +6,6 @@ export default function RangeSlider() {
   const [maxValue, setMaxValue] = useState(30);
 
   const handleMin = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // if((maxValue - minValue >= 100) && maxValue<=10){
-    //   if(parseInt(e.target.value)>maxValue){
-    //   }
-    //   else{
-    //     setMinValue(parseInt(e.target.value))
-    //   }
-    // }else{
-    //   if(parseInt(e.target.value)<minValue){
-    //     setMinValue(parseInt(e.target.value))
-    //   }
-    // }
     const value = parseInt(e.target.value);
     setMinValue(value);
     if (value > maxValue) {
@@ -54,7 +43,7 @@ export default function RangeSlider() {
           min={0}
           step={1}
           max={maxValue}
-          className='range-min absolute w-full -top-1 h-1 bg-transparent appearance-none pointer-events-none'
+          className='range-min absolute w-full -top-1 h-1 bg-transparent appearance-none pointer-events-none cursor-pointer'
         />
         <input id='customSliderRight'
           type="range"
@@ -63,7 +52,7 @@ export default function RangeSlider() {
           min={minValue}
           step={1}
           max={100}
-          className='range-max absolute w-full -top-1 h-1 bg-transparent appearance-none pointer-events-none'
+          className='range-max absolute w-full -top-1 h-1 bg-transparent appearance-none pointer-events-none cursor-pointer'
         />
       </div>
     </div>

@@ -33,7 +33,7 @@ export default function PropertySearchBox() {
                 <div className='m-4'>
                     <input className='w-full py-4 text-gray-500 outline outline-1 outline-gray-300 p-5 shadow-xs focus:outline-color-orange focus:outline-1'  type='text' placeholder='Max Size (in Sqft)'/>
                 </div>
-                <div className='col-span-3 m-4 pb-8 pt-2'>
+                <div className='col-span-1 md:col-span-2 lg:col-span-3 m-4 pb-8 pt-2'>
                     <RangeSlider/>
                 </div>
                 <div className='col-span-1 md:col-span-2 lg:col-span-3 content-center mb-4 flex justify-center'>

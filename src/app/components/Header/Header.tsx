@@ -12,6 +12,7 @@ import HomeHoverDropdown from './HomeHoverDropdown'
 import AboutHoverDropdown from './AboutHoverDropdown'
 import NewsHoverDropdown from './NewsHoverDropdown'
 import PropertyHoverDropdown from './PropertyHoverDropDown'
+import PagesHoverDropdown from './PagesHoverDropdown'
 
 
 export default function Header() {
@@ -42,38 +43,30 @@ export default function Header() {
         </div>
         <div className="hidden custom_screen:flex custom_screen:flex-1 custom_screen:justify-end custom_screen:gap-x-9 xl:gap-x-10 custom_screen:mr-24 ">
         
-            <div>
+            <div className='cursor-pointer'>
               <HomeHoverDropdown/>
             </div>
                 
-                <div>
+                <div className='cursor-pointer'>
               <AboutHoverDropdown/>
             </div>
-            <div>
+            <div className='cursor-pointer'>
               <PropertyHoverDropdown/>
             </div>
 
-            <div>
+            <div className='cursor-pointer'>
               <NewsHoverDropdown/>
             </div>
-            
-            
-            <div className='flex flex-row items-center'>
-              <a className="my-2 text-base xl:text-lg  font-semibold text-white">
-                Pages
-              </a>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3 w-3 text-white">
-                  <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
-                </svg></span>
+            <div>
+              <PagesHoverDropdown/>
             </div>
             
-            <div className='flex items-center'>
+            <div className='flex items-center cursor-pointer'>
               <a className="my-2 text-base xl:text-lg  font-semibold text-white">
                 Contact
               </a>
             </div>
-            <div className='flex items-center'>
+            <div className='flex items-center cursor-pointer'>
               <button className='my-2 text-sm font-semibold text-nowrap text-white bg-color-orange px-7 py-3 hover:text-black hover:bg-white'>Add Listing</button>
             </div>
             
