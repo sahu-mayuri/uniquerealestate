@@ -1,5 +1,5 @@
 import { Menu, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, JSX, SVGProps, useEffect, useRef, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 export default function Example() {
@@ -148,7 +148,7 @@ export default function Example() {
   )
 }
 
-function EditInactiveIcon(props) {
+function EditInactiveIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -166,7 +166,7 @@ function EditInactiveIcon(props) {
   )
 }
 
-function EditActiveIcon(props) {
+function EditActiveIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -184,7 +184,7 @@ function EditActiveIcon(props) {
   )
 }
 
-function DuplicateInactiveIcon(props) {
+function DuplicateInactiveIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -208,7 +208,7 @@ function DuplicateInactiveIcon(props) {
   )
 }
 
-function DuplicateActiveIcon(props) {
+function DuplicateActiveIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

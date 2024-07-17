@@ -36,19 +36,19 @@ const Slider = () => {
 
           <div ref={carouselRef} id="cards" className='w-full   flex py-2 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide'>
 
-            <div id="box1" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 pr-3 bg-slider-background-color  '>
+            <div id="box1" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 pr-3 bg-slider-background-color  '>
                 <Card></Card>
             </div>
-            <div id="box2" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
+            <div id="box2" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
             <Card></Card>
             </div>
-            <div id="box3" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
+            <div id="box3" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
             <Card></Card>
             </div>
-            <div id="box4" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
+            <div id="box4" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color '>
             <Card></Card>
             </div>
-            <div id="box5" className='snap-start w-full md:w-[50%] custom_screen:w-[33.5%] shrink-0 pl-3 bg-slider-background-color '>
+            <div id="box5" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 pl-3 bg-slider-background-color '>
             <Card></Card>
             </div>
 
@@ -79,6 +79,7 @@ const Slider = () => {
 
         </div>
       </div>
+      
     </div>
   )
 }
