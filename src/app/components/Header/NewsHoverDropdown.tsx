@@ -12,7 +12,7 @@ export default function NewsHoverDropdown() {
     <div className="relative group">
       <div className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none font-montserrat">
       <div className='flex flex-row items-center'>
-              <a className="my-2 text-lg font-semibold text-white">
+              <a className="my-2 text-base xl:text-lg font-semibold text-white">
                 News
               </a>
               <span>
@@ -21,7 +21,7 @@ export default function NewsHoverDropdown() {
                 </svg></span>
                 </div>  
       </div>
-      <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
+      <div className="absolute z-10 top-20 hidden bg-grey-200 group-hover:block">
         <div className='w-full h-[0.340rem] bg-color-orange'></div>
      
         <div className="w-[14rem] px-8 pt-6 pb-6 bg-white shadow-lg">
