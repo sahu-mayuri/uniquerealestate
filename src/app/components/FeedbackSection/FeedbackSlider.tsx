@@ -1,7 +1,8 @@
 "use client"
 import React, { useState, useRef } from 'react'
+import FeedbackCard from './FeedbackCard'
 
-const Slider = () => {
+const FeedbackSlider = () => {
   const [slideIndex, setSlideIndex] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
 
@@ -33,21 +34,16 @@ const Slider = () => {
 
           <div ref={carouselRef} id="cards" className='w-full   flex py-2 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide'>
 
-            <div id="box1" className='snap-start w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 pr-3 bg-slider-background-color  '>
-                <Card></Card>
-            </div>
             <div id="box2" className='snap-start w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 px-3 bg-slider-background-color '>
-            <Card></Card>
+            <FeedbackCard></FeedbackCard>
             </div>
             <div id="box3" className='snap-start w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 px-3 bg-slider-background-color '>
-            <Card></Card>
+            <FeedbackCard></FeedbackCard>
             </div>
             <div id="box4" className='snap-start w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 px-3 bg-slider-background-color '>
-            <Card></Card>
+            <FeedbackCard></FeedbackCard>
             </div>
-            <div id="box5" className='snap-start w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 pl-3 bg-slider-background-color '>
-            <Card></Card>
-            </div>
+            
 
             {/* Slider controls */}
 
@@ -80,4 +76,4 @@ const Slider = () => {
   )
 }
 
-export default Slider;
+export default FeedbackSlider;

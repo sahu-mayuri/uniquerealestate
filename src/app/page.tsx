@@ -8,9 +8,13 @@ import BuildingAminities from "./components/AminitiesSection/BuildingAminities";
 import AppartmentSection from "./components/AppartmentPlanSection/AppartmentSection";
 import PropertySearchBox from "./components/Header/PropertySearchBox";
 import ButtonDropdown from "./components/Header/LocationButtonDropdown";
+
+import ClientFeedback from "./components/FeedbackSection/ClientFeedback";
+
 import Parallax from "./components/ParallaxSection/Parallax";
 import FeatureSection from "./components/FeatureSection/FeatureSection";
 import LatestListingSection from "./components/LatestListing/LatestListingSection";
+
 
 
 export default function Home() {
@@ -34,6 +38,7 @@ export default function Home() {
       <AppartmentSection></AppartmentSection>
       <Parallax></Parallax>
       <BuildingAminities></BuildingAminities>
+      <ClientFeedback></ClientFeedback>
       <FeedSection ></FeedSection>
       <TopFooter></TopFooter>
       <Footer></Footer>

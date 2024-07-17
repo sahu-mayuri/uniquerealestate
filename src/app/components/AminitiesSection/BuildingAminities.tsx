@@ -5,7 +5,7 @@ export default function BuildingAminities() {
         <>
             {/* main container of aminities cards */}
             <div className="w-full pt-[7.188rem] pb-[7.188rem] pr-[0.5rem] pl-[0.5rem]">
-                <AminitiesTopSection></AminitiesTopSection>
+                <AminitiesTopSection top="Our Aminities" bottom="Building Aminities"></AminitiesTopSection>
                 {/* card container */}
                 <div className='w-full flex justify-center mt-[1rem]'>
                     <div className='w-full px[0.5rem] grid grid-cols-1 gap-y-[2.85rem] sm:grid-cols-2 sm:gap-x-4 sm:w-[31.875rem] sm:px-0 md:grid-cols-3 md:gap-x-8 md:w-[45rem] md:px-[0.9rem] lg:w-[58rem] lg:px-0 lg:grid-cols-4  xl:w-[74.375rem]'>
@@ -31,7 +31,7 @@ export default function BuildingAminities() {
                             </div>
                         </div>
 
-                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem] hover:text-white hover:bg-color-orange transition duration-300 ease-in-out transform ">
+                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem]  hover:bg-color-orange transition duration-300 ease-in-out transform ">
                             <div className="w-full h-full">
                                 <div className="w-full h-[7.875rem] flex flex-col">
                                     <div className='h-[5rem] flex justify-center'>
@@ -51,7 +51,7 @@ export default function BuildingAminities() {
                             </div>
                         </div>
 
-                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem] hover:text-white hover:bg-color-orange transition duration-300 ease-in-out transform ">
+                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem]  hover:bg-color-orange transition duration-300 ease-in-out transform ">
                             <div className="w-full h-full">
                                 <div className="w-full h-[7.875rem] flex flex-col">
                                     <div className='h-[5rem] flex justify-center'>
@@ -71,7 +71,7 @@ export default function BuildingAminities() {
                             </div>
                         </div>
 
-                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem] hover:text-white hover:bg-color-orange transition duration-300 ease-in-out transform ">
+                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem]  hover:bg-color-orange transition duration-300 ease-in-out transform ">
                             <div className="w-full h-full">
                                 <div className="w-full h-[7.875rem] flex flex-col">
                                     <div className='h-[5rem] flex justify-center'>
@@ -91,7 +91,7 @@ export default function BuildingAminities() {
                             </div>
                         </div>
 
-                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem] hover:text-white hover:bg-color-orange transition duration-300 ease-in-out transform ">
+                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem]  hover:bg-color-orange transition duration-300 ease-in-out transform ">
                             <div className="w-full h-full">
                                 <div className="w-full h-[7.875rem] flex flex-col">
                                     <div className='h-[5rem] flex justify-center'>
@@ -111,7 +111,7 @@ export default function BuildingAminities() {
                             </div>
                         </div>
 
-                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem] hover:text-white hover:bg-color-orange transition duration-300 ease-in-out transform ">
+                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] custom_screen:h-[15.25rem]  hover:bg-color-orange transition duration-300 ease-in-out transform ">
                             <div className="w-full h-full">
                                 <div className="w-full h-[7.875rem] flex flex-col">
                                     <div className='h-[5rem] flex justify-center'>
@@ -132,7 +132,7 @@ export default function BuildingAminities() {
                         </div>
 
 
-                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] md:ml-[58%] lg:ml-[0%] custom_screen:h-[15.25rem] hover:text-white hover:bg-color-orange transition duration-300 ease-in-out transform ">
+                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] md:ml-[58%] lg:ml-[0%] custom_screen:h-[15.25rem]  hover:bg-color-orange transition duration-300 ease-in-out transform ">
                             <div className="w-full h-full">
                                 <div className="w-full h-[7.875rem] flex flex-col">
                                     <div className='h-[5rem] flex justify-center'>
@@ -152,7 +152,7 @@ export default function BuildingAminities() {
                             </div>
                         </div>
 
-                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] md:ml-[58%] lg:ml-[0%] custom_screen:h-[15.25rem] hover:text-white hover:bg-color-orange transition duration-300 ease-in-out transform ">
+                        <div id="card" className="group w-full h-[11.75rem] shadow-box-shadow-4 cardshadow rounded-[0.5rem] pt-[2.5rem] pr-[0.938rem] pb-[2.188rem] pl-[0.938rem] md:h-[13.563rem] md:ml-[58%] lg:ml-[0%] custom_screen:h-[15.25rem]  hover:bg-color-orange transition duration-300 ease-in-out transform ">
                             <div className="w-full h-full">
                                 <div className="w-full h-[7.875rem] flex flex-col">
                                     <div className='h-[5rem] flex justify-center'>
