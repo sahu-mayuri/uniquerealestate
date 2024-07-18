@@ -1,4 +1,15 @@
-const FeaturesCard = () => {
+interface FeaturesCardProps{
+    url:string;
+    purpose:string;
+    location:string;
+    price:number;
+    text:string;
+    Number_of_bedroom:number;
+    Number_of_bathroom:number;
+    owner_name:string;
+    isRent:Boolean;
+}
+const FeaturesCard: React.FC<FeaturesCardProps> = ({url , isRent ,purpose , location , price , text, Number_of_bathroom, Number_of_bedroom , owner_name}) => {
     return (
       <div id="card-container" className="w-full bg-white shadow-lg">
 
@@ -6,7 +17,7 @@ const FeaturesCard = () => {
 
             {/* THIS IS THE LAYER DIV TO LOWER THE BRIGHTNESS OF THE IMAGES */}
 
-          <div id="layercontainer" className="size-full bg-black/20 absolute top-0"></div>
+          <div id="layercontainer" className="size-full bg-black/30 absolute top-0"></div>
 
             <div id="content" className="w-full h-full absolute top-0 p-4 ">
                 
@@ -15,7 +26,7 @@ const FeaturesCard = () => {
                 <div id="top" className="w-full  flex  justify-end md:mb-32 mb-16">
 
                     {/* RENT BUTTON */}
-                    <button className="font-nunito_ExtraBold tracking-tight text-[0.8rem] md:text-[0.9rem] text-white bg-[#77C720] px-3 py-1">FOR RENT</button>
+                    <button className={`font-nunito_ExtraBold tracking-tight text-[0.8rem] md:text-[0.9rem] text-white px-3 py-1 ${isRent ? 'bg-[#77C720]' : 'bg-red-500'}`}>{purpose}</button>
                 </div>
                 <div id="btm" className="w-full flex justify-between pt-16">
                     <div id="b1" className=" flex items-center ">
@@ -24,7 +35,7 @@ const FeaturesCard = () => {
                         <svg className=" text-[0.85rem] md:text-[1rem] custom_screen:text-[1rem] mr-1 text-white" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" > <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path> </svg>
                         </div>
                         <div id="text">
-                            <h1 className="font-nunitoLight font-semibold text-white text-[0.85rem] md:text-[1rem]">Chicago</h1>
+                            <h1 className="font-nunitoLight font-semibold text-white text-[0.85rem] md:text-[1rem]">{location}</h1>
                         </div>
                     </div>
                     <div id="b2" className="flex gap-2  ">
@@ -47,32 +58,35 @@ const FeaturesCard = () => {
 
             </div>
             
-            <img className=" w-full h-full object-cover hover:scale-110 transition duration-500 ease-in-out " src="/images/4.jpg" alt="" />
+            {/* THIS IS THE CARD IMAGE */}
+            <img className=" w-full h-full object-cover hover:scale-110 transition  ease-in-out " src={url} alt="" />
           </div>
 
 
           {/* This is the middle Section of card */}
 
-          <div id="dets-container" className="w-full p-4">
+          <div id="dets-container" className="w-full px-4 pt-4">
 
               <div id="icons" className="p-2  mt-2">
                   <div id="admin" className="flex items-center">
                      
                       <div id="text">
-                          <h1 className="font-poppins text-color-orange font-bold md:text-[85%] lg:text-[1.1rem] hover:cursor-default">$ 69/ <span className="font-normal">Month</span></h1>
+                          <h1 className="font-poppins text-color-orange font-bold md:text-[85%] lg:text-[1.1rem] hover:cursor-default">{price}<span className="font-normal">/Month</span></h1>
                       </div>
                   </div>
                   
               </div>
               <div id="dets" className="w-full">
-                  <h1 className="font-popins p-2 pb-8 text-[1.1rem] font-bold md:text-[115%] lg:text-[115%] lg:font-bold hover:cursor-pointer hover:text-color-orange">Luxury Vila in Rego Park </h1>
+                  <h1 className="font-popins p-2 pb-8 text-[1.1rem] font-bold md:text-[115%] lg:text-[115%] lg:font-bold hover:cursor-pointer hover:text-color-orange">{text} </h1>
               </div>
 
               <div id="dets" className=" flex gap-2 ml-2 mb-6">
                 <div id="box" className=" pr-4 border-r-2 border-gray-400">
                     <div id="top" className="flex gap-2 items-center">
-                        <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">3</h1></div>
-                        <div id="icon" className="size-4 bg-green-400"> </div>
+                        <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">{Number_of_bedroom}</h1></div>
+                        <div id="icon" className="size-4 ">
+                        <img src="/FlaticonSVG/bed.png" alt="" />
+                        </div>
                     </div>
                     <div id="btm">
                         <h1 className="font-nunito_Medium font-medium text-gray-500 text-[0.9rem]">Bedrooms</h1>
@@ -80,8 +94,10 @@ const FeaturesCard = () => {
                 </div>
                 <div id="box" className=" pr-4 border-r-2 border-gray-400">
                     <div id="top" className="flex gap-2 items-center">
-                        <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">2</h1></div>
-                        <div id="icon" className="size-4 bg-green-400"> </div>
+                        <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">{Number_of_bathroom}</h1></div>
+                        <div id="icon" className="size-4  ">
+                            <img src="/FlaticonSVG/bathtub.png" alt="" />
+                        </div>
                     </div>
                     <div id="btm">
                         <h1 className="font-nunito_Medium font-medium text-gray-500 text-[0.9rem]">Bathroom</h1>
@@ -90,13 +106,14 @@ const FeaturesCard = () => {
                 <div id="box" className=" pr-4 border-r-2 border-gray-400">
                     <div id="top" className="flex gap-2 items-center">
                         <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">3450</h1></div>
-                        <div id="icon" className="size-4 bg-green-400"> </div>
+                        <div id="icon" className="size-4 "> 
+                            <img className="size-[13px] " src="/FlaticonSVG/selection.png" alt="" />
+                        </div>
                     </div>
                     <div id="btm">
                         <h1 className="font-nunito_Medium font-medium text-gray-500  text-[0.9rem]">Sq. Ft</h1>
                     </div>
                 </div>
-                
                 
               </div>
 
@@ -104,8 +121,8 @@ const FeaturesCard = () => {
               <hr className="text-gray-400 mb-5  w-[100%] self-center" />
 
             {/* THIS IS BOTTOM SECTION OF THE CARD */}
-
-              <div id="bottom-section" className="w-full md:flex ">
+              </div>
+              <div id="bottom-section" className="w-full md:flex pb-4">
 
                 {/* AVATAR IMAGE  */}
                 <div id="avatar-container" className="md:w-1/2  flex items-center gap-4 px-3 hover:cursor-default">
@@ -115,10 +132,9 @@ const FeaturesCard = () => {
 
                 {/* AVATAR DETS */}
                     <div id="avatar-dets">
-                        <h1 className="text-[0.9rem] font-poppins font-semibold hover:cursor-pointer hover:text-color-orange">Rosalina D.</h1>
+                        <h1 className="text-[0.9rem] font-poppins font-semibold hover:cursor-pointer hover:text-color-orange">{owner_name}</h1>
                         <h1 className="text-[0.8rem] font-nunito_Medium text-gray-400 hover:cursor-defaul">Property Seller</h1>
                     </div>
-                    
                 </div>
                 
                 {/* This is popover part */}
@@ -142,7 +158,6 @@ const FeaturesCard = () => {
                 </div>
 
                 </div>
-              </div>
           </div>
         </div>
      

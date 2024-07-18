@@ -1,13 +1,16 @@
 "use client"
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import FeaturesCard from '../Cards/FeaturesCard'
 import TopSection from '../FeedSection/TopSection'
+import { FeatureCardDets } from '../Cards/Cards_details/FeatureCardDetails'
+
 
 const FeatureSlider = () => {
   const [slideIndex, setSlideIndex] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
 
-  const slides = 5; // total number of slides
+  const curoselslides = FeatureCardDets.length; // total number of slides
+  const slides = [...FeatureCardDets]
 
   // Move to the previous slide
   const handlePrevSlide = () => {
@@ -17,7 +20,7 @@ const FeatureSlider = () => {
         left: -cardWidth,
         behavior: 'smooth',
       });
-      setSlideIndex((prevIndex) => (prevIndex - 1 + slides) % slides);
+      setSlideIndex((prevIndex) => (prevIndex - 1 + curoselslides) % curoselslides);
     }
   }
 
@@ -29,7 +32,7 @@ const FeatureSlider = () => {
         left: cardWidth,
         behavior: 'smooth',
       });
-      setSlideIndex((prevIndex) => (prevIndex + 1) % slides);
+      setSlideIndex((prevIndex) => (prevIndex + 1) % curoselslides);
     }
   }
 
@@ -57,21 +60,26 @@ const FeatureSlider = () => {
       <div id="slider" className='w-full px-4 lg:px-9'>
         <div id="sliding-div" className='group w-full relative bg-[#F9FAFB] lg:px-2'>
           <div ref={carouselRef} id="cards" className='w-full flex pb-2 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide'>
-            <div id="box1" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 pr-3 bg-slider-background-color'>
-              <FeaturesCard />
-            </div>
-            <div id="box2" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color'>
-              <FeaturesCard />
-            </div>
-            <div id="box3" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color'>
-              <FeaturesCard />
-            </div>
-            <div id="box4" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 px-3 bg-slider-background-color'>
-              <FeaturesCard />
-            </div>
-            <div id="box5" className='snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 pl-3 bg-slider-background-color'>
-              <FeaturesCard />
-            </div>
+            {slides.map((items, index) => (
+              <div
+                key={index} // Add unique key here
+                id={`box${index + 1}`}
+                className={`snap-start w-full custom_small:w-[50%] custom_screen:w-[33.5%] shrink-0 ${
+                  index === 0 ? 'pr-3' : index === curoselslides - 1 ? 'pl-3' : 'px-3'
+                } bg-slider-background-color`} >
+                <FeaturesCard 
+                  url={items.url} 
+                  purpose={items.purpose} 
+                  location={items.location} 
+                  price={items.price} 
+                  text={items.text} 
+                  Number_of_bedroom={items.Number_of_bedroom} 
+                  Number_of_bathroom={items.Number_of_bathroom} 
+                  owner_name={items.owner_name} 
+                  isRent={items.isRent} 
+                />
+              </div>
+            ))}
           </div>
 
           {/* Previous slide button */}
@@ -99,10 +107,10 @@ const FeatureSlider = () => {
           </button>
 
           {/* Pagination buttons */}
-          <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-5  items-center">
-            {[...Array(slides)].map((_, index) => (
-              <button
-                key={index}
+          <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-5 items-center">
+            {[...Array(curoselslides)].map((_, index) => (
+              <a
+                key={index} // Add unique key here
                 onClick={() => handlePaginationClick(index)}
                 className={`transition duration-500 ease-in-out rounded-full ${index === slideIndex ? 'bg-color-orange' : 'bg-gray-300'} ${index === slideIndex ? 'size-4' : 'size-3'} `}
               />
