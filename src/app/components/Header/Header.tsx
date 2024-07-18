@@ -17,17 +17,16 @@ import PagesHoverDropdown from './PagesHoverDropdown'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  
+
   return (
     <header >
       <nav className="w-full px-2 flex items-center justify-between py-1 lg:py-6 lg:px-4" aria-label="Global">
         <div className="flex pt-6 px-1 min-[520px]:px-12 md:px-12 lg:px-24 custom_screen:pt-0">
-        {/* <div className="flex pt-6 px-2 md:pt-0 md:px-0"></div> */}
           <a href="#" >
-            
-              <img src='https://quarter-nextjs.vercel.app/img/logo-2.png' />
-            
-        
+
+            <img src='https://quarter-nextjs.vercel.app/img/logo-2.png' />
+
+
           </a>
         </div>
         <div className="flex pt-6 px-1 min-[520px]:px-12 lg:px-24 custom_screen:pt-0 custom_screen:hidden">
@@ -42,82 +41,82 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden custom_screen:flex custom_screen:flex-1 custom_screen:justify-end custom_screen:gap-x-9 xl:gap-x-10 custom_screen:mr-24 ">
-        
-            <div className='cursor-pointer'>
-              <HomeHoverDropdown/>
-            </div>
-                
-                <div className='cursor-pointer'>
-              <AboutHoverDropdown/>
-            </div>
-            <div className='cursor-pointer'>
-              <PropertyHoverDropdown/>
-            </div>
 
-            <div className='cursor-pointer'>
-              <NewsHoverDropdown/>
-            </div>
-            <div>
-              <PagesHoverDropdown/>
-            </div>
-            
-            <div className='flex items-center cursor-pointer'>
-              <a className="my-2 text-base xl:text-lg  font-semibold text-white">
-                Contact
-              </a>
-            </div>
-            <div className='flex items-center cursor-pointer'>
-              <button className='my-2 text-sm font-semibold text-nowrap text-white bg-color-orange px-7 py-3 hover:text-black hover:bg-white'>Add Listing</button>
-            </div>
-            
+          <div className='cursor-pointer'>
+            <HomeHoverDropdown />
+          </div>
+
+          <div className='cursor-pointer'>
+            <AboutHoverDropdown />
+          </div>
+          <div className='cursor-pointer'>
+            <PropertyHoverDropdown />
+          </div>
+
+          <div className='cursor-pointer'>
+            <NewsHoverDropdown />
+          </div>
+          <div>
+            <PagesHoverDropdown />
+          </div>
+
+          <div className='flex items-center cursor-pointer'>
+            <a className="my-2 text-base xl:text-lg  font-semibold text-white">
+              Contact
+            </a>
+          </div>
+          <div className='flex items-center cursor-pointer'>
+            <button className='my-2 text-sm font-semibold text-nowrap text-white bg-color-orange px-7 py-3 hover:text-black hover:bg-white'>Add Listing</button>
+          </div>
+
         </div>
       </nav>
-      <Dialog className="custom_screen:hidden" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <div className='flex flex-row items-center ms-5'>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-10 text-orange-600">
-                  <path d="M19.006 3.705a.75.75 0 1 0-.512-1.41L6 6.838V3a.75.75 0 0 0-.75-.75h-1.5A.75.75 0 0 0 3 3v4.93l-1.006.365a.75.75 0 0 0 .512 1.41l16.5-6Z" />
-                  <path fillRule="evenodd" d="M3.019 11.114 18 5.667v3.421l4.006 1.457a.75.75 0 1 1-.512 1.41l-.494-.18v8.475h.75a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1 0-1.5H3v-9.129l.019-.007ZM18 20.25v-9.566l1.5.546v9.02H18Zm-9-6a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75H9Z" clipRule="evenodd" />
+      <Dialog className="custom_screen:hidden bg-green-300" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
+        <div className="fixed inset-0 z-10 bg-white inset-y-0 left-0 w-[20rem] md:w-[25rem] transform ease-in-out transition-all duration-1000" style={{ transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}>
+          <div className='flex flex-col px-8 py-10 gap-6'>
+            <div className='flex flex-row items-center'>
+              <div className='w-[70%] '>
+                <a href="#" >
+                  <img className='w-full' src='https://quarter-nextjs.vercel.app/img/logo.png' />
+                </a>
+              </div>
+              <div className='w-[30%] flex justify-end'>
+                <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  {/* Insert your XMarkIcon component or icon here */}
+                </button>
+                </div>
+            </div>
+            <hr></hr>
+            <div >
+              <div className='flex flex-row items-center'>
+                <input type='text' placeholder='Search...' className='w-full relative text-gray-600 outline outline-1 outline-gray-300 px-5 py-4 shadow-xs focus:outline-color-orange focus:outline-1 outline-none ' />
+                <svg className='absolute right-10 cursor-pointer' stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                  </path>
                 </svg>
-                <span className='text-black font-bold text-2xl px-2'>Unique Real Estate</span>
               </div>
-            </a>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-              {/* Insert your XMarkIcon component or icon here */}
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Features
-                </a>
-                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Marketplace
-                </a>
-                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Company
-                </a>
+            </div>
+            <div>
+              <div className='flex flex-row items-center'>
+                <a className='text-gray-500'>Home</a>
               </div>
-              <div className="py-6">
-                <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Log in
-                </a>
+            </div>
+            <div>
+              <div className='flex flex-row items-center'>
+                <a className='text-gray-500'>About</a>
+              </div>
+            </div>
+            <div>
+              <div className='flex flex-row items-center'>
+                <a className='text-gray-500'>Property</a>
               </div>
             </div>
           </div>
-        </DialogPanel>
+        </div>
+
       </Dialog>
-      {/* </div> */}
     </header>
 
   )
