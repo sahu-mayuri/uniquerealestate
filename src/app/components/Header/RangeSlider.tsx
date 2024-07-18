@@ -7,17 +7,15 @@ export default function RangeSlider() {
 
   const handleMin = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value);
-    setMinValue(value);
-    if (value > maxValue) {
-      setMaxValue(value);
+    if (value <= maxValue) {
+      setMinValue(value);
     }
   };
-
+  
   const handleMax = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value);
-    setMaxValue(value);
-    if (value < minValue) {
-      setMinValue(value);
+    if (value >= minValue) {
+      setMaxValue(value);
     }
   };
 
@@ -30,7 +28,7 @@ export default function RangeSlider() {
         <div
           className='progress absolute h-2 bg-color-orange rounded'
           style={{
-            width: `${((maxValue - minValue) / (100 - 0)) * 100}%`,
+            width: `${((maxValue - minValue) / 100) * 100}%`,
             left: `${(minValue / 100) * 100}%`,
           }}
         ></div>
