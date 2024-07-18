@@ -20,7 +20,7 @@ import OurServices from "./components/OurServices/OurServices";
 
 export default function Home() {
   return (
-    <div className="bg-light-white relative">
+    <div className="bg-light-white relative overflow-hidden">
       <div id="parallaxImg" className="w-full h-screen top-0 fixed -z-10">
         <img className="size-full object-cover" src="/images/11.jpg" alt="" />
       </div>
