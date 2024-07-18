@@ -5,7 +5,7 @@ interface FeedbackTopProps{
 
 const FeedbackTopSection = (props:FeedbackTopProps) => {
   return (
-    <div className="feed-section bg-light-white mb-10">
+    <div className="feed-section mb-10">
         <div className=" w-full pt-5 ">
             <div id="content" className='flex flex-col justify-center items-center'>
                 <div id="text" className=' py-1 px-3 rounded-[50px] bg-pink mb-4 tracking-tighter'>
