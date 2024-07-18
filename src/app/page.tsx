@@ -14,6 +14,7 @@ import ClientFeedback from "./components/FeedbackSection/ClientFeedback";
 import Parallax from "./components/ParallaxSection/Parallax";
 import FeatureSection from "./components/FeatureSection/FeatureSection";
 import LatestListingSection from "./components/LatestListing/LatestListingSection";
+import OurServices from "./components/OurServices/OurServices";
 
 
 
@@ -34,6 +35,7 @@ export default function Home() {
         </div>
       </div>
       <LatestListingSection></LatestListingSection>
+      <OurServices></OurServices>
       <FeatureSection></FeatureSection>
       <AppartmentSection></AppartmentSection>
       <Parallax></Parallax>
