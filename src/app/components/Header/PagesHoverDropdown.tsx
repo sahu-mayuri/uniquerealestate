@@ -47,7 +47,7 @@ export default function PagesHoverDropdown() {
                                     <p className='bg-gray-100 text-gray-500 text-nowrap hover:text-color-orange py-2 text-base font-headfont tracking-wide border-dashed border-b pl-2 cursor-pointer'>Inner Pages</p>
                                     {
                                         InnerPages1.map((list) =>
-                                            <a className='text-gray-500 text-nowrap text-base font-headfont tracking-wider hover:text-color-orange pl-2 cursor-pointer'>
+                                            <a className='text-gray-500 text-nowrap text-base font-headfont tracking-wider hover:text-color-orange pl-2 cursor-pointer' key={list.id}>
                                                 {list.name}
                                             </a>)
                                     }
@@ -58,7 +58,7 @@ export default function PagesHoverDropdown() {
                                     <p className='bg-gray-100 text-gray-500 py-2 text-nowrap text-base font-headfont tracking-wide border-dashed border-b pl-2 cursor-pointer hover:text-color-orange'>Inner Pages</p>
                                     {
                                         InnerPages2.map((list) =>
-                                            <a className='text-gray-500 text-base text-nowrap font-headfont tracking-wider hover:text-color-orange pl-2 cursor-pointer'>
+                                            <a className='text-gray-500 text-base text-nowrap font-headfont tracking-wider hover:text-color-orange pl-2 cursor-pointer' key={list.id}>
                                                 {list.name}
                                             </a>)
                                     }
@@ -69,7 +69,7 @@ export default function PagesHoverDropdown() {
                                     <p className='bg-gray-100 text-gray-500 py-2 text-nowrap text-base font-headfont tracking-wide border-dashed border-b pl-2 cursor-pointer hover:text-color-orange'>Property Pages</p>
                                     {
                                         propertyPages.map((list) =>
-                                            <a className='text-gray-500 text-base text-nowrap font-headfont tracking-wider hover:text-color-orange pl-2 cursor-pointer'>
+                                            <a className='text-gray-500 text-base text-nowrap font-headfont tracking-wider hover:text-color-orange pl-2 cursor-pointer' key={list.id}>
                                                 {list.name}
                                             </a>)
                                     }

@@ -30,7 +30,7 @@ export default function NewsHoverDropdown() {
           
             {
                 newsList.map((list)=>
-                <a className='text-gray-500 text-base font-headfont tracking-wider hover:text-color-orange'>
+                <a className='text-gray-500 text-base font-headfont tracking-wider hover:text-color-orange' key={list.id}>
                 {list.name}
               </a>)
             }
