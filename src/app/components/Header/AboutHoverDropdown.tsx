@@ -8,7 +8,7 @@ export default function AboutHoverDropdown() {
         { id: '4', name: 'Portfolio - 02' },
         { id: '5', name: 'Team' },
         { id: '6', name: 'FAQ' },
-        { id: '2', name: 'Google Map Locations' },
+        { id: '7', name: 'Google Map Locations' },
       ];
   return (
     <div><div className="relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
@@ -33,7 +33,7 @@ export default function AboutHoverDropdown() {
           
             {
                 aboutList.map((list)=>
-                <a className='text-gray-500 text-base font-headfont tracking-wider hover:text-color-orange'>
+                <a className='text-gray-500 text-base font-headfont tracking-wider hover:text-color-orange' key={list.id}>
                 {list.name}
               </a>)
             }

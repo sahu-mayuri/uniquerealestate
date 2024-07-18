@@ -8,11 +8,11 @@ export default function HomeHoverDropdown() {
         { id: '4', name: 'Home Style 04' },
         { id: '5', name: 'Home Style 05' },
         { id: '6', name: 'Home Style 06' },
-        { id: '2', name: 'Home Style 07' },
-        { id: '3', name: 'Home Style 08' },
-        { id: '4', name: 'Home Style 09' },
-        { id: '5', name: 'Home Style 10' },
-        { id: '6', name: 'Home Style 11' },
+        { id: '7', name: 'Home Style 07' },
+        { id: '8', name: 'Home Style 08' },
+        { id: '9', name: 'Home Style 09' },
+        { id: '10', name: 'Home Style 10' },
+        { id: '11', name: 'Home Style 11' },
       ];
   return (
     <div><div className="relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
@@ -37,7 +37,7 @@ export default function HomeHoverDropdown() {
           
             {
                 homeList.map((list)=>
-                <a className='text-gray-500 text-base font-headfont tracking-wider hover:text-color-orange'>
+                <a className='text-gray-500 text-base font-headfont tracking-wider hover:text-color-orange' key={list.id}>
                 {list.name}
               </a>)
             }
