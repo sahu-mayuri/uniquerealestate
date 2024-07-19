@@ -17,6 +17,23 @@ import PagesHoverDropdown from './PagesHoverDropdown'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [homeSubMenu,setHomeSubMenu]=useState(false)
+  const homeList = [
+    { id: '1', name: 'Home Style 01' },
+    { id: '2', name: 'Home Style 02' },
+    { id: '3', name: 'Home Style 03' },
+    { id: '4', name: 'Home Style 04' },
+    { id: '5', name: 'Home Style 05' },
+    { id: '6', name: 'Home Style 06' },
+    { id: '7', name: 'Home Style 07' },
+    { id: '8', name: 'Home Style 08' },
+    { id: '9', name: 'Home Style 09' },
+    { id: '10', name: 'Home Style 10' },
+    { id: '11', name: 'Home Style 11' },
+  ];
+  function handleSubMenu(){
+    setHomeSubMenu(!homeSubMenu)
+  }
 
   return (
     <header >
@@ -72,7 +89,7 @@ export default function Header() {
         </div>
       </nav>
       <Dialog className="custom_screen:hidden bg-green-300" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
-        <div className="fixed inset-0 z-10 bg-white inset-y-0 left-0 w-[20rem] md:w-[25rem] transform ease-in-out transition-all duration-1000" style={{ transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}>
+        <div className="overflow-y-auto fixed inset-0 z-10 bg-white inset-y-0 left-0 w-[20rem] md:w-[25rem] transform ease-in-out transition-all duration-1000" style={{ transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}>
           <div className='flex flex-col px-8 py-10 gap-6'>
             <div className='flex flex-row items-center'>
               <div className='w-[70%] '>
@@ -100,9 +117,22 @@ export default function Header() {
             </div>
             <div>
               <div className='flex flex-row items-center'>
-                <a className='text-gray-500'>Home</a>
+                <a className='text-gray-500 hover:animate-rotate_90'>Home</a>
+                <div className='flex w-full justify-end '>
+                <button onClick={handleSubMenu}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 relative active:animate-rotate_90 focus:animate-rotate_90">
+                  <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+                </svg>
+                </button>
+                </div>
               </div>
+             {homeSubMenu && <div className='flex flex-col gap-4 pt-4 pl-4'>
+                {homeList.map((list)=>
+                <a key={list.id} className='text-gray-500 text-sm font-nunito tracking-wider'>{list.name}</a>
+                )}
+              </div>}
             </div>
+            
             <div>
               <div className='flex flex-row items-center'>
                 <a className='text-gray-500'>About</a>
