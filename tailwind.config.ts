@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -6,8 +7,26 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  variants: {
+    extend: {
+      animation: ['active','focus','hover']
+    }
+  },
   theme: {
     extend: {
+      animation:{
+        rotate_90:"rotate_90 0.2s forwards",
+      },
+      keyframes:{
+        rotate_90: {
+          "0%": {
+            transform: "rotate(0deg)", // Start with no rotation
+          },
+          "100%": {
+            transform: "rotate(90deg)" // Rotate 90 degrees clockwise and stay
+          },
+        },
+      },
       colors: {
         'light-white': '#FFFFFF',
         'pink': '#FFEEEB',

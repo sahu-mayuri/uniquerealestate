@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 export default function RangeSlider() {
-  const [minValue, setMinValue] = useState(5);
+  const [minValue, setMinValue] = useState(3);
   const [maxValue, setMaxValue] = useState(30);
 
   const handleMin = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,14 +40,14 @@ export default function RangeSlider() {
           onChange={handleMin}
           min={0}
           step={1}
-          max={maxValue}
+          max={100}
           className='range-min absolute w-full -top-1 h-1 bg-transparent appearance-none pointer-events-none cursor-pointer'
         />
         <input id='customSliderRight'
           type="range"
           value={maxValue}
           onChange={handleMax}
-          min={minValue}
+          min={0}
           step={1}
           max={100}
           className='range-max absolute w-full -top-1 h-1 bg-transparent appearance-none pointer-events-none cursor-pointer'

@@ -38,7 +38,7 @@ export default function PagesHoverDropdown() {
                             </svg></span>
                     </div>
                 </div>
-                <div className="absolute w-screen hidden z-10 top-20 -right-[23rem] xl:-right-[24rem] pr-[6rem] lg:pl-[6rem] custom_screen:pl-[8rem] bg-grey-200 group-hover:block ">
+                <div className="absolute w-screen hidden animate-fadeIn z-10 top-20 -right-[23rem] xl:-right-[24rem] pr-[6rem] lg:pl-[6rem] custom_screen:pl-[8rem] bg-grey-200 group-hover:block ">
                     <div className='w-full h-[0.340rem] bg-color-orange'></div>
                     <div className="w-full px-10 pt-8 pb-6 bg-white shadow-lg">
                         <div className="grid grid-cols-4 gap-8 ">

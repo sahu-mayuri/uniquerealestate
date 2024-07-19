@@ -60,7 +60,7 @@ export default function PropertyHoverDropdown() {
               </span>
             </div>  
           </div>
-          <div className={`absolute z-10 ${showOtherPages ? 'block' : 'hidden'} top-20 bg-grey-200 group-hover:block`} onMouseLeave={closeDropdown}>
+          <div className={`absolute z-10 ${showOtherPages ? 'block' : 'hidden'} animate-fadeIn top-20 bg-grey-200 group-hover:block`} onMouseLeave={closeDropdown}>
             <div className='w-full h-[0.340rem] bg-color-orange'></div>
             <div className="w-[15rem] pl-8 pt-6 pb-6 bg-white shadow-lg">
               <div className="grid grid-cols-1 gap-5 cursor-pointer">
@@ -78,7 +78,7 @@ export default function PropertyHoverDropdown() {
                       <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" />
                     </svg>
                   </div>
-                  <div className={`absolute z-10 left-[13rem] ${showOtherPages ? 'block' : 'hidden'} bg-grey-200`}>
+                  <div className={`absolute z-10 left-[13rem] ${showOtherPages ? 'block' : 'hidden'} bg-grey-200 animate-fadeIn`}>
                     <div className='w-full h-[0.340rem] bg-color-orange'></div>
                     <div className="w-[15rem] pl-8 pt-6 pb-6 bg-white shadow-lg">
                       <div className="grid grid-cols-1 gap-5 cursor-pointer">

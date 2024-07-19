@@ -24,7 +24,7 @@ export default function AboutHoverDropdown() {
                 </svg></span>
                 </div>  
       </div>
-      <div className="absolute z-10 top-20 hidden bg-grey-200 group-hover:block">
+      <div className="absolute animate-fadeIn z-10 top-20 hidden bg-grey-200 group-hover:block">
         <div className='w-full h-[0.340rem] bg-color-orange'></div>
      
         <div className="w-[15rem] pl-8 pt-6 pb-6 bg-white shadow-lg">

@@ -19,7 +19,7 @@ export default function LanguageHoverDropdown() {
                     <svg className="text-white size-4 lg:size-5" stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                         <path fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={48} d="M112 268l144 144 144-144M256 392V100" /></svg>
                 </div>
-                <div className=" absolute z-10 left-[-5.4rem] top-[1.2rem] hidden group-hover:block">
+                <div className=" absolute z-10 left-[-5.4rem] top-[1.6rem] hidden animate-fadeIn group-hover:block">
                     <div id="filter" className='w-full h-3 '></div>
                     <div className='w-auto text-nowrap pr-14 bg-gray-100 py-1'>
 
