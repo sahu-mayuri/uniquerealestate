@@ -1,8 +1,42 @@
-import React from 'react'
-import CopyRight from './CopyRight'
+"use client"
 
+import React, { useEffect, useRef } from 'react'
+import CopyRight from './CopyRight'
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
 
 const Footer = () => {
+
+    const liRef = useRef(null);
+    
+
+    function activateAnimation(){
+       var tl = gsap.timeline();
+
+        tl.to(liRef.current, {
+          x:19,
+          duration: 0.3,
+          
+        })
+
+        tl.to(liRef.current,{
+          background:'none',
+        })
+
+
+       
+    }
+
+    function deactivateAnimation(){
+      
+      gsap.to(liRef.current, {
+        x:0,
+        duration: 0.3,
+      })
+    }
+    
+  
+
   return (
     <div>
     <div className='bg-[#171B2A] p-6 text-white'>
@@ -145,11 +179,21 @@ const Footer = () => {
                   </h5>
 
                   <ul className="mb-16 list-none cursor-pointer font-nunito_Medium">
-                    <ul className="mb-0 list-none  text-start cursor-pointer">
-                      <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                        <a className=" dark:text-neutral-200 hover:text-red-500">About</a>
+                    <ul className="mb-0 list-none  text-start cursor-pointer relative">
+
+                      {/* I AM EDITING HERE */}
+
+                      <li id='liTag' ref={liRef} onMouseEnter={activateAnimation} onMouseLeave={deactivateAnimation} className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
+                        <div id="slash" >
+                          <h1 className='w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600 '>//</h1>
+                         </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">About</a>
                       </li>
-                      <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
+
+                      <li className=" relative mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
+                        <div id="slash" >
+                          <h1 className='w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600 '>//</h1>
+                         </div>
                         <a className=" dark:text-neutral-200 hover:text-red-500">Blog</a>
                       </li>
                       <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
@@ -182,7 +226,7 @@ const Footer = () => {
                     <li>
                       <div id="input" className="flex mb-6 md:mt-[1.5rem] ">
 
-                        <input type="text" className="w-[83%] px-5" placeholder="Email" />
+                        <input type="text" className="w-[83%] px-5 text-black focus:outline-none" placeholder="Email" />
 
                         <div id="logo-box" className="w-[18%] h-[4.05rem] bg-orange-500 flex justify-center items-center">
                           <svg className="" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path></svg>

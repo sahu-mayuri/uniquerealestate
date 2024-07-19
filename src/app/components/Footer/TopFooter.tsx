@@ -1,6 +1,28 @@
+"use client"
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { gsap } from 'gsap'
+
 
 
 const TopFooter = () => {
+
+  const buttonRef = useRef(null);
+
+    function activateAnimation(){
+        gsap.to(buttonRef.current, {
+          x:206,
+          duration: 0.3,
+        })
+    }
+
+    function deactivateAnimation(){
+      gsap.to(buttonRef.current, {
+        x:0,
+        duration: 0.3,
+      })
+    }
+
   return (
     <div>
       <div id="top-footer-container" className="w-full relative mt-10">
@@ -27,12 +49,12 @@ const TopFooter = () => {
 
               <div id="bottom" className="w-full bg-color-orange flex justify-center items-center md:justify-center md:pt-4 lg:mt-0 lg:justify-end  ">
 
-                <button className=" flex items-center gap-1 text-[0.9rem] shadow-2xl bg-white font-popins  px-[7%] py-[4%] md:py-[2%] md:px-[4%] md:text-[1rem] lg:py-[3.5%] lg:text-[1rem] relative lg:mb-8 ">
-                  Explore Properties
+                <button onMouseEnter={activateAnimation} onMouseLeave={deactivateAnimation} className="overflow-hidden group flex items-center gap-1 text-[0.9rem] shadow-2xl bg-white font-popins  px-[7%] py-[4%] md:py-[2%] md:px-[4%] md:text-[1rem] lg:py-[3.5%] lg:text-[1rem] relative lg:mb-8 ">
+                  <h1 className="group-hover">Explore Properties</h1>
                   <div id="icon" className="h-4 w-5 ">
                   <svg className="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" ><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" /></svg>
                   </div>
-                  {/* <div id="animation" className="absolute w-full h-full bg-black top-0 left-[-100%]"></div> */}
+                  <div  id="animation" ref={buttonRef}  className="absolute w-full h-full hidden group-hover:inline bg-black top-0 left-[-100%] "></div>
                 </button>
               </div>
             </div>
