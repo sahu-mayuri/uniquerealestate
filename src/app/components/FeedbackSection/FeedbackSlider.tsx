@@ -39,7 +39,7 @@ const FeedbackSlider = () => {
 
             <div id="box1" className='snap-start group relative overflow-hidden hover:shadow-none transition duration-1000 ease-in-out w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 px-3 bg-slider-background-color '>
               <FeedbackCard></FeedbackCard>
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-color-orange transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
+              <div className="absolute inset-x-0 bottom-0 h-1 bg-color-orange transform origin-left scale-x-0 hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
             </div>
             <div id="box2" className='snap-start w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 px-3 bg-slider-background-color '>
               <FeedbackCard></FeedbackCard>
