@@ -23,7 +23,7 @@ export const FeatureCardDets = [
       isRent : false ,
     },
     {
-      url: '/images/1.jpg',
+      url: '/images/6.jpg',
       purpose: 'Rent',
       location: 'Bhopal',
       price: 90,
@@ -34,7 +34,7 @@ export const FeatureCardDets = [
       isRent : true ,
     },
     {
-      url: '/images/4.jpg',
+      url: '/images/3.jpg',
       purpose: 'Sale',
       location: 'Indore',
       price: 100,

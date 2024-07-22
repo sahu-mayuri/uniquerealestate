@@ -1,41 +1,32 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react'
+import React, {  useRef } from 'react'
 import CopyRight from './CopyRight'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 
 const Footer = () => {
 
-    const liRef = useRef(null);
-    
-
-    function activateAnimation(){
-       var tl = gsap.timeline();
-
-        tl.to(liRef.current, {
-          x:19,
-          duration: 0.3,
-          
-        })
-
-        tl.to(liRef.current,{
-          background:'none',
-        })
-
-
-       
-    }
-
-    function deactivateAnimation(){
-      
-      gsap.to(liRef.current, {
-        x:0,
-        duration: 0.3,
-      })
-    }
-    
   
+  const LiRefC4 = useRef([]);
+
+  const activateAnimation = (ref: gsap.TweenTarget) => {
+    gsap.to(ref, {
+      x: 19,
+      duration: 0.3,
+    });
+    gsap.to(ref, {
+      background: 'none',
+    });
+  };
+
+  const deactivateAnimation = (ref: gsap.TweenTarget) => {
+    gsap.to(ref, {
+      x: 0,
+      duration: 0.3,
+    });
+  };
+
 
   return (
     <div>
@@ -53,58 +44,23 @@ const Footer = () => {
                   </p>
 
                   <div id="dets" className="">
-                    
 
                     <div className=" mb-4 flex items-center justify-start md:justify-start text-[0.8rem] md:text-[1rem] custom_screen:text-[1rem] text-white ">
                       {/* THIS IS LOCATION SVG */}
-                      <svg
-                        className=" text-[0.9rem] md:text-[1rem] custom_screen:text-[1rem] mr-3 text-white"
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 384 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {" "}
-                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
-                      </svg>
+                      <svg className=" text-[0.9rem] md:text-[1rem] custom_screen:text-[1rem] mr-3 text-white" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" > <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path> </svg>
                       Brooklyn, New York, United States
                     </div>
 
                     <div className=" mb-4 flex items-center justify-start md:justify-start  text-[0.8rem] md:text-[1rem] custom_screen:text-[1rem] text-white">
                       {/* THIS IS PHONE SVG */}
-                      <svg
-                        className="text-[0.9rem] md:text-[1rem] custom_screen:text-[1rem] mr-3 text-white"
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
-                      </svg>
-                      +0123-456789
+                      <svg className="text-[0.9rem] md:text-[1rem] custom_screen:text-[1rem] mr-3 text-white" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path> </svg>
+                      <h1 className='hover:cursor-pointer hover:text-red-600'>+0123-456789</h1>
                     </div>
 
                     <div className="mb-4 flex items-center justify-start md:justify-start text-[0.8rem] md:text-[1rem] custom_screen:text-[1rem] text-white">
                       {/* THIS IS EMAIL SVG */}
-                      <svg
-                        className="text-[0.9rem] md:text-[1rem] custom_screen:text-[1rem] mr-3 text-white"
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 512 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
-                      </svg>
-                      example@example.com
+                      <svg className="text-[0.9rem] md:text-[1rem] custom_screen:text-[1rem] mr-3 text-white" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" > <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path> </svg>
+                      <h1 className='hover:cursor-pointer hover:text-red-600'>example@exapmle.com</h1>
                     </div>
                   </div>
                   <div className="flex items-center justify-start mb-16 md:justify-start ">
@@ -123,24 +79,72 @@ const Footer = () => {
                   </h5>
 
                   <ul className="mb-16 list-none  text-start cursor-pointer font-nunito_Medium ">
-                    <li className="mb-[0.9rem] text-[0.9rem] md:mb-[1rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">About</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:mb-[1rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">Blogs</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:mb-[1rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">All Products</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:mb-[1rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">Location Map</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:mb-[1rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">FAQ</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:mb-[1rem] md:text-[1rem] custom_screen:mb-[1rem]  custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">Contact us</a>
-                    </li>
+                  <li
+                        ref={(el) => (LiRefC4.current[0] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[0])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[0])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">About</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[1] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[1])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[1])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Blog</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[2] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[2])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[2])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">All Product</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[3] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[3])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[3])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Location Map</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[4] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[4])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[4])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">FAQ</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[50] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[50])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[50])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Contact Us</a>
+                      </li>
                   </ul>
             </div>
             <div id='c3' className='w-full custom_screen:w-[18%] h-full lg:mt-2' >
@@ -149,28 +153,72 @@ const Footer = () => {
                   </h5>
 
                   <ul className="mb-16 list-none  text-start cursor-pointer font-nunito_Medium">
-                    <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">Order tracking</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">Wish List</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">Login</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">My account</a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">
-                        Terms & Conditions
-                      </a>
-                    </li>
-                    <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:text-[1rem]">
-                      <a className=" dark:text-neutral-200 hover:text-red-500">
-                        Promotions Offers
-                      </a>
-                    </li>
+                  <li
+                        ref={(el) => (LiRefC4.current[5] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[5])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[5])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Order tracking</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[6] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[6])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[6])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Wish List</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[7] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[7])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[7])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Login</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[8] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[8])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[8])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">My account</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[9] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[9])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[9])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Terms & Conditions</a>
+                      </li>
+                      <li
+                        ref={(el) => (LiRefC4.current[10] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[10])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[10])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Promotional Offers</a>
+                      </li>
                   </ul>
             </div>
             <div id='c4' className='w-full md:pl-5 lg:pl-0 custom_screen:w-[18%] h-full lg:mt-2' >
@@ -182,31 +230,71 @@ const Footer = () => {
                     <ul className="mb-0 list-none  text-start cursor-pointer relative">
 
                       {/* I AM EDITING HERE */}
-
-                      <li id='liTag' ref={liRef} onMouseEnter={activateAnimation} onMouseLeave={deactivateAnimation} className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                        <div id="slash" >
-                          <h1 className='w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600 '>//</h1>
-                         </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">About</a>
+                      <li
+                        ref={(el) => (LiRefC4.current[11] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[11])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[11])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Login</a>
                       </li>
-
-                      <li className=" relative mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                        <div id="slash" >
-                          <h1 className='w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600 '>//</h1>
-                         </div>
-                        <a className=" dark:text-neutral-200 hover:text-red-500">Blog</a>
+                      <li
+                        ref={(el) => (LiRefC4.current[12] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[12])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[12])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">My Account</a>
                       </li>
-                      <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                        <a className=" dark:text-neutral-200 hover:text-red-500">All Product</a>
+                      <li
+                        ref={(el) => (LiRefC4.current[13] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[13])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[13])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Wish List</a>
                       </li>
-                      <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                        <a className=" dark:text-neutral-200 hover:text-red-500">Location</a>
+                      <li
+                        ref={(el) => (LiRefC4.current[14] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[14])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[14])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Order Tracking</a>
                       </li>
-                      <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]">
-                        <a className=" dark:text-neutral-200 hover:text-red-500">FAQ</a>
+                      <li
+                        ref={(el) => (LiRefC4.current[15] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[15])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[15])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">FAQ</a>
                       </li>
-                      <li className="mb-[0.9rem] text-[0.9rem] md:text-[1rem] custom_screen:text-[1rem]">
-                        <a className=" dark:text-neutral-200 hover:text-red-500">Contact us</a>
+                      <li
+                        ref={(el) => (LiRefC4.current[16] = el)}
+                        onMouseEnter={() => activateAnimation(LiRefC4.current[16])}
+                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[16])}
+                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                      >
+                        <div id="slash">
+                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                        </div>
+                        <a className="dark:text-neutral-200 hover:text-red-500">Contact Us</a>
                       </li>
                     </ul>
                   </ul>

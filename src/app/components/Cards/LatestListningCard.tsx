@@ -1,5 +1,15 @@
-
-const  LatestListingCard = () => {
+interface LatestListingProps{
+    url:string;
+    purpose:string;
+    location:string;
+    price:number;
+    text:string;
+    Number_of_bedroom:number;
+    Number_of_bathroom:number;
+    owner_name:string;
+    isRent:Boolean;
+}
+const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,price,text,Number_of_bathroom,Number_of_bedroom,owner_name,isRent}) => {
     return (
       <div id="card-container" className="w-full bg-white shadow-xl">
 
@@ -24,7 +34,7 @@ const  LatestListingCard = () => {
 
             </div>
             
-            <img className=" w-full h-full object-cover hover:scale-110 transition duration-500 ease-in-out " src="/images/4.jpg" alt="" />
+            <img className=" w-full h-full object-cover hover:scale-110 transition duration-500 ease-in-out " src={url} alt="" />
           </div>
 
 
@@ -35,11 +45,11 @@ const  LatestListingCard = () => {
                 {/* THE RENT OR SELL BUTTON */}
 
               <div id="icons" className="p-2  mt-2">
-                  <button className=" font-nunito_ExtraBold tracking-tight text-[0.8rem] md:text-[0.9rem] text-white bg-[#77C720] px-3 py-1">FOR RENT</button>
+                  <button className={`font-nunito_ExtraBold tracking-tight text-[0.8rem] md:text-[0.9rem] text-white px-3 py-1 ${isRent ? 'bg-[#77C720]' : 'bg-red-500'}`}>{purpose}</button>
               </div>
               
               <div id="dets" className="w-full">
-                  <h1 className="font-popins p-2 pb-4 text-[1.1rem] font-bold md:text-[115%] lgi:text-[115%] lg:font-bold">Luxury Vila in Rego Park </h1>
+                  <h1 className="font-popins p-2 pb-4 text-[1.1rem] font-bold md:text-[115%] lgi:text-[115%] lg:font-bold">{text}</h1>
               </div>
 
                 {/* THIS IS ICONS */}
@@ -48,14 +58,14 @@ const  LatestListingCard = () => {
                         <svg className=" text-[0.85rem] md:text-[1rem] custom_screen:text-[0.9rem] mr-1 text-color-orange" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" > <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path> </svg>
                         </div>
                         <div id="text">
-                            <h1 className="font-nunitoLight font-semibold text-gray-500 text-[0.85rem] md:text-[0.95rem]">Chicago</h1>
+                            <h1 className="font-nunitoLight font-semibold text-gray-500 text-[0.85rem] md:text-[0.95rem]">{location}</h1>
                         </div>
               </div>
 
               <div id="dets" className=" flex gap-2 ml-2 mb-6">
                 <div id="box" className=" pr-4  flex gap-2">
                     <div id="top" className="flex gap-2 items-center">
-                        <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">3</h1></div>
+                        <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">{Number_of_bedroom}</h1></div>
                     </div>
                     <div id="btm">
                         <h1 className="font-nunito_Medium font-medium text-gray-500 text-[0.9rem]">Bedrooms</h1>
@@ -63,7 +73,7 @@ const  LatestListingCard = () => {
                 </div>
                 <div id="box" className=" pr-4  flex gap-2">
                     <div id="top" className="flex gap-2 items-center">
-                        <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">2</h1></div>
+                        <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">{Number_of_bathroom}</h1></div>
                     </div>
                     <div id="btm">
                         <h1 className="font-nunito_Medium font-medium text-gray-500 text-[0.9rem]">Bathroom</h1>
@@ -107,7 +117,7 @@ const  LatestListingCard = () => {
 
               <div id="bottom-section" className="w-full md:flex ">
 
-              <h1 className="font-poppins ml-2 text-color-orange font-bold md:text-[85%] lg:text-[1rem]">$ 69/ <span className="font-normal">Month</span></h1>
+              <h1 className="font-poppins ml-2 text-color-orange font-bold md:text-[85%] lg:text-[1rem]">{price} <span className="font-normal">/Month</span></h1>
                 
               </div>
           </div>
