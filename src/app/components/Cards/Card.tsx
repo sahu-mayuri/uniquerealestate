@@ -8,7 +8,7 @@ const Card = (props:CardProps) => {
     return (
       <div id="card-container" className="w-full bg-white">
           <div id="image-container" className="w-full h-[13.5rem] md:h-[18rem] overflow-hidden ">
-              <img className=" w-full h-full object-cover hover:scale-110  hover:text-color-orange hover:cursor-pointer transition ease-in-out" src={props.url} alt="" />
+              <img className=" w-full h-full object-cover hover:scale-110  hover:text-color-orange hover:cursor-pointer transition ease-in" src={props.url} alt="" />
           </div>
           <div id="dets-container" className="w-full p-4">
               <div id="icons" className="p-2 flex gap-4 mt-2">

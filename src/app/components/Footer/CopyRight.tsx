@@ -1,5 +1,12 @@
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
+import React, {  useRef } from 'react'
+
 
 const CopyRight = () => {
+
+  
+  
   return (
     <div className="">
 
@@ -15,9 +22,9 @@ const CopyRight = () => {
             </div>
 
             <div id="texts" className=" flex  w-[85%] flex-wrap md:justify-end md:w-[80%]  md:pb-0 md:gap-4 lg:w-full lg:pb-0  lg:gap-4 lg:justify-end lg:items-center ">
-              <h1 className=" font-poppinsSemibold tracking-tight text-[0.85rem] md:text-[0.9rem] text-white mr-6 md:mr-0 lg:mr-0">Terms and Conditions</h1>
-              <h1 className=" mb-1 font-poppinsSemibold tracking-tight text-[0.85rem] md:text-[0.9rem] lg:mb-0 text-white">Claim</h1>
-              <h1 className="font-poppinsSemibold tracking-tight text-[0.85rem] md:text-[0.9rem] text-white ml-14 md:ml-0  lg:ml-0 l">Privacy and Policy</h1>
+              <h1 className=" font-poppinsSemibold tracking-tight text-[0.85rem] md:text-[0.9rem] text-white mr-6 md:mr-0 lg:mr-0 hover:cursor-pointer hover:text-red-600">Terms and Conditions</h1>
+              <h1 className=" mb-1 font-poppinsSemibold tracking-tight text-[0.85rem] md:text-[0.9rem] lg:mb-0 text-white hover:cursor-pointer hover:text-red-600">Claim</h1>
+              <h1 className=" font-poppinsSemibold tracking-tight text-[0.85rem] md:text-[0.9rem] text-white ml-14 md:ml-0  lg:ml-0 l hover:cursor-pointer hover:text-red-600">Privacy and Policy</h1>
             </div>
 
 
