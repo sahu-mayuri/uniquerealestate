@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 export default function RangeSlider() {
-  const [minValue, setMinValue] = useState(3);
+  const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(30);
 
   const handleMin = (e: React.ChangeEvent<HTMLInputElement>) => {
