@@ -26,7 +26,9 @@ const config: Config = {
             transform: "rotate(90deg)" // Rotate 90 degrees clockwise and stay
           },
         },
+        
       },
+      
       colors: {
         'light-white': '#FFFFFF',
         'pink': '#FFEEEB',
