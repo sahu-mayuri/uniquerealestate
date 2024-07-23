@@ -37,7 +37,7 @@ const FeedbackSlider = () => {
 
           <div ref={carouselRef} id="cards" className='w-full flex py-2 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide'>
 
-            <div id="box1" className='snap-start  overflow-hidden hover:shadow-none transition duration-1000 ease-in-out w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 px-3 bg-slider-background-color '>
+            <div id="box1" className='snap-start w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 px-3 bg-slider-background-color '>
               <FeedbackCard></FeedbackCard>
             </div>
             <div id="box2" className='snap-start w-full md:w-[50%] custom_screen:w-[34.15%] shrink-0 px-3 bg-slider-background-color '>
