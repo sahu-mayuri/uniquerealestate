@@ -5,9 +5,8 @@ import SaleSearchBox from './SaleSearchBox'
 
 export default function PropertySearchBox() {
     const [rentButton, setRentButton]=useState(true)
-    const rentbutton=document.getElementById('rentbutton');
-    const salebutton=document.getElementById('salebutton')
-    function handleRentButton(){
+    
+    function handleRentButton(){      
         setRentButton(true)
     }
     function handleSaleButton(){
@@ -36,9 +35,7 @@ export default function PropertySearchBox() {
                         </div>
                     </button>
                 </div>
-                
-                {rentButton?(<div className='transition delay-500 ease-in-out'><RentSearchBox/></div>):(<SaleSearchBox/>) }
-                
+                {rentButton?(<div className='bg-[#F2F6F7]'><RentSearchBox/></div>):(<div className='bg-[#F2F6F7]'><SaleSearchBox/></div>) }
             </div>
         </div>
     )

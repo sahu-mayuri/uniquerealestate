@@ -1,22 +1,29 @@
 "use client"
 
-import React, {  useRef } from 'react'
+import React, {  useRef, useState } from 'react'
 import CopyRight from './CopyRight'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 
 const Footer = () => {
 
+  const company = ["About", "Blog", "All Products", "LOcations Map", "FAQ", "Contact us"]
+  const Services = ["Order tracking", "Wish List", "Login", "My Account", "Terms & Conditions", "Promotional Offers"]
+  const CustomerCare = ["Login","My Account","Wish List","Order tracking","FAQ", "Contact us"]
+
+
+
   
-  const LiRefC4 = useRef([]);
+  // THIS IS ANIMATION PART
+  // ======================================================================================
+  const LiRefC2 = useRef<(HTMLLIElement | null)[]>([]);
+  const LiRefC3 = useRef<(HTMLLIElement | null)[]>([]);
+  const LiRefC4 = useRef<(HTMLLIElement | null)[]>([]);
 
   const activateAnimation = (ref: gsap.TweenTarget) => {
     gsap.to(ref, {
       x: 19,
       duration: 0.3,
-    });
-    gsap.to(ref, {
-      background: 'none',
     });
   };
 
@@ -26,6 +33,9 @@ const Footer = () => {
       duration: 0.3,
     });
   };
+
+  // ======================================================================================
+
 
 
   return (
@@ -77,148 +87,43 @@ const Footer = () => {
             <h5 className="  mb-[1.5rem] text-[1.4rem]  text-start text-white font-poppinsExtraBold">
                     Company
                   </h5>
-
                   <ul className="mb-16 list-none  text-start cursor-pointer font-nunito_Medium ">
-                  <li
-                        ref={(el) => (LiRefC4.current[0] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[0])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[0])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">About</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[1] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[1])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[1])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Blog</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[2] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[2])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[2])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">All Product</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[3] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[3])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[3])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Location Map</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[4] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[4])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[4])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">FAQ</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[50] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[50])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[50])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Contact Us</a>
-                      </li>
+
+                  {company.map((item, index) => (
+                <li
+                  key={index}
+                  ref={(el) => (el && (LiRefC2.current[index] = el))}
+                  onMouseEnter={() => activateAnimation(LiRefC2.current[index])}
+                  onMouseLeave={() => deactivateAnimation(LiRefC2.current[index])}
+                  className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                >
+                  <div id="slash">
+                    <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                  </div>
+                  <a className="dark:text-neutral-200 hover:text-red-500">{item}</a>
+                </li>
+              ))}
+                      
                   </ul>
             </div>
             <div id='c3' className='w-full custom_screen:w-[18%] h-full lg:mt-2' >
-            <h5 className=" font-bold font-poppinsExtraBold mb-[1.5rem] text-[1.4rem]  text-start text-white ">
-                    Services
-                  </h5>
-
+            <h5 className=" font-bold font-poppinsExtraBold mb-[1.5rem] text-[1.4rem]  text-start text-white "> Services</h5>
                   <ul className="mb-16 list-none  text-start cursor-pointer font-nunito_Medium">
-                  <li
-                        ref={(el) => (LiRefC4.current[5] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[5])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[5])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Order tracking</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[6] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[6])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[6])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Wish List</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[7] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[7])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[7])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Login</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[8] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[8])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[8])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">My account</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[9] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[9])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[9])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Terms & Conditions</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[10] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[10])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[10])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Promotional Offers</a>
-                      </li>
+                  {Services.map((item, index) => (
+                <li
+                  key={index}
+                  ref={(el) => (el && (LiRefC3.current[index] = el))}
+                  onMouseEnter={() => activateAnimation(LiRefC3.current[index])}
+                  onMouseLeave={() => deactivateAnimation(LiRefC3.current[index])}
+                  className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                >
+                  <div id="slash">
+                    <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                  </div>
+                  <a className="dark:text-neutral-200 hover:text-red-500">{item}</a>
+                </li>
+              ))}
+
                   </ul>
             </div>
             <div id='c4' className='w-full md:pl-5 lg:pl-0 custom_screen:w-[18%] h-full lg:mt-2' >
@@ -229,73 +134,21 @@ const Footer = () => {
                   <ul className="mb-16 list-none cursor-pointer font-nunito_Medium">
                     <ul className="mb-0 list-none  text-start cursor-pointer relative">
 
-                      {/* I AM EDITING HERE */}
-                      <li
-                        ref={(el) => (LiRefC4.current[11] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[11])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[11])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Login</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[12] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[12])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[12])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">My Account</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[13] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[13])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[13])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Wish List</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[14] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[14])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[14])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Order Tracking</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[15] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[15])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[15])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">FAQ</a>
-                      </li>
-                      <li
-                        ref={(el) => (LiRefC4.current[16] = el)}
-                        onMouseEnter={() => activateAnimation(LiRefC4.current[16])}
-                        onMouseLeave={() => deactivateAnimation(LiRefC4.current[16])}
-                        className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                      >
-                        <div id="slash">
-                          <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
-                        </div>
-                        <a className="dark:text-neutral-200 hover:text-red-500">Contact Us</a>
-                      </li>
+                    {CustomerCare.map((item, index) => (
+                <li
+                  key={index}
+                  ref={(el) => (el && (LiRefC4.current[index] = el))}
+                  onMouseEnter={() => activateAnimation(LiRefC4.current[index])}
+                  onMouseLeave={() => deactivateAnimation(LiRefC4.current[index])}
+                  className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
+                >
+                  <div id="slash">
+                    <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-red-600">//</h1>
+                  </div>
+                  <a className="dark:text-neutral-200 hover:text-red-500">{item}</a>
+                </li>
+              ))}
+                      
                     </ul>
                   </ul>
             </div>

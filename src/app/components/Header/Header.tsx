@@ -23,7 +23,11 @@ export default function Header() {
   const [propertySubMenu, setPropertySubMenu] = useState(false)
   const [newsSubMenu, setNewsSubMenu] = useState(false)
   const [pagesSubMenu, setPagesSubMenu] = useState(false)
-  const minusRef = useRef(null);
+  const minusHomeRef = useRef(null);
+  const minusAboutRef = useRef(null);
+  const minusPropertyRef = useRef(null);
+  const minusNewsRef = useRef(null);
+  const minusPagesRef = useRef(null);
   const homeList = [
     { id: '1', name: 'Home Style 01' },
     { id: '2', name: 'Home Style 02' },
@@ -79,19 +83,53 @@ export default function Header() {
   ];
 
   function handleHomeSubMenu() {
-    gsap.to(minusRef.current, { rotation: '+=90' });
+    gsap.to(minusHomeRef.current, { rotation: '+=90', duration:0.3 });
+    if(!homeSubMenu){
+    gsap.to(".homeBox", { y:0, duration:0.5 ,height:'auto' });
+    }
+    else{
+      gsap.to(".homeBox", {duration:0.5 ,height:0 });
+    }
     setHomeSubMenu(!homeSubMenu)
   }
   function handleAboutSubMenu() {
+    gsap.to(minusAboutRef.current, { rotation: '+=90', duration:0.3 });
+    if(!aboutSubMenu){
+      gsap.to(".aboutBox", { y:0, duration:0.5 ,height:'auto' });
+      }
+      else{
+        gsap.to(".aboutBox", {duration:0.5 ,height:0 });
+      }
     setAboutSubMenu(!aboutSubMenu)
   }
   function handlePropertySubMenu() {
+    gsap.to(minusPropertyRef.current, { rotation: '+=90', duration:0.3 });
+    if(!propertySubMenu){
+      gsap.to(".propertyBox", { y:0, duration:0.5 ,height:'auto' });
+      }
+      else{
+        gsap.to(".propertyBox", {duration:0.5 ,height:0 });
+      }
     setPropertySubMenu(!propertySubMenu)
   }
   function handleNewsSubMenu() {
+    gsap.to(minusNewsRef.current, { rotation: '+=90', duration:0.3 });
+    if(!newsSubMenu){
+      gsap.to(".newsBox", { y:0, duration:0.5 ,height:'auto' });
+      }
+      else{
+        gsap.to(".newsBox", {duration:0.5 ,height:0 });
+      }
     setNewsSubMenu(!newsSubMenu)
   }
   function handlePagesSubMenu() {
+    gsap.to(minusPagesRef.current, { rotation: '+=90', duration:0.3 });
+    if(!pagesSubMenu){
+      gsap.to(".pagesBox", { y:0, duration:0.5 ,height:'auto' });
+      }
+      else{
+        gsap.to(".pagesBox", {duration:0.5 ,height:0 });
+      }
     setPagesSubMenu(!pagesSubMenu)
   }
 
@@ -148,8 +186,8 @@ export default function Header() {
 
         </div>
       </nav>
-      <Dialog className="custom_screen:hidden bg-green-300" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
-        <div className="overflow-y-auto fixed inset-0 z-10 bg-white inset-y-0 left-0 w-[20rem] md:w-[25rem] transform ease-in-out transition-all duration-1000" style={{ transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}>
+      <div className="custom_screen:hidden">
+        <div id='scrollBar' className="overflow-y-auto fixed inset-0 z-10 bg-white inset-y-0 left-0 w-[20rem] md:w-[25rem] transform ease-in-out transition-all duration-500" style={{ transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}>
           <div className='flex flex-col px-8 py-10 gap-6'>
             <div className='flex flex-row items-center'>
               <div className='w-[70%] '>
@@ -183,85 +221,107 @@ export default function Header() {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 relative">
                       <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
                     </svg>
-                    <svg id='minus' ref={minusRef} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 rotate-90 absolute">
+                    <svg ref={minusHomeRef} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 rotate-90 absolute">
                       <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
                     </svg>
                   </button>
                 </div>
               </div>
-              {homeSubMenu && <div className='flex flex-col gap-4 pt-4 pl-4'>
+              <div className={`homeBox h-0 overflow-hidden`}>
+                <div className='flex flex-col gap-4 pt-4 pl-4 '>
                 {homeList.map((list) =>
                   <a key={list.id} className='text-gray-500 text-sm font-nunito tracking-wider'>{list.name}</a>
                 )}
-              </div>}
+                </div>
+              </div>
             </div>
             <div>
               <div className='flex flex-row items-center'>
                 <a className='text-gray-500 text-sm uppercase'>About</a>
                 <div className='flex w-full justify-end '>
-                  <button onClick={handleAboutSubMenu}>
+                  <button className='inline-flex' onClick={handleAboutSubMenu}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 relative active:animate-rotate_90 focus:animate-rotate_90">
+                      <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+                    </svg>
+                    <svg ref={minusAboutRef} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 rotate-90 absolute">
                       <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
                     </svg>
                   </button>
                 </div>
               </div>
-              {aboutSubMenu && <div className='flex flex-col gap-4 pt-4 pl-4'>
+              <div className={`aboutBox h-0 overflow-hidden`}>
+                <div className='flex flex-col gap-4 pt-4 pl-4 '>
                 {aboutList.map((list) =>
                   <a key={list.id} className='text-gray-500 text-sm font-nunito tracking-wider'>{list.name}</a>
                 )}
-              </div>}
+                </div>
+              </div>
             </div>
             <div>
               <div className='flex flex-row items-center'>
                 <a className='text-gray-500 text-sm uppercase'>Property</a>
                 <div className='flex w-full justify-end '>
-                  <button onClick={handlePropertySubMenu}>
+                  <button className='inline-flex' onClick={handlePropertySubMenu}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 relative active:animate-rotate_90 focus:animate-rotate_90">
+                      <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+                    </svg>
+                    <svg ref={minusPropertyRef} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 rotate-90 absolute">
                       <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
                     </svg>
                   </button>
                 </div>
               </div>
-              {propertySubMenu && <div className='flex flex-col gap-4 pt-4 pl-4'>
+              <div className={`propertyBox h-0 overflow-hidden`}>
+                <div className='flex flex-col gap-4 pt-4 pl-4 '>
                 {propertyList.map((list) =>
                   <a key={list.id} className='text-gray-500 text-sm font-nunito tracking-wider'>{list.name}</a>
                 )}
-              </div>}
+                </div>
+              </div>
             </div>
             <div>
               <div className='flex flex-row items-center'>
                 <a className='text-gray-500 text-sm uppercase'>News</a>
                 <div className='flex w-full justify-end '>
-                  <button onClick={handleNewsSubMenu}>
+                  <button className='inline-flex' onClick={handleNewsSubMenu}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 relative active:animate-rotate_90 focus:animate-rotate_90">
+                      <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+                    </svg>
+                    <svg ref={minusNewsRef} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 rotate-90 absolute">
                       <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
                     </svg>
                   </button>
                 </div>
               </div>
-              {newsSubMenu && <div className='flex flex-col gap-4 pt-4 pl-4'>
+              <div className={`newsBox h-0 overflow-hidden`}>
+                <div className='flex flex-col gap-4 pt-4 pl-4 '>
                 {newsList.map((list) =>
                   <a key={list.id} className='text-gray-500 text-sm font-nunito tracking-wider'>{list.name}</a>
                 )}
-              </div>}
+                </div>
+              </div>
             </div>
             <div>
               <div className='flex flex-row items-center'>
                 <a className='text-gray-500 text-sm uppercase'>Pages</a>
                 <div className='flex w-full justify-end '>
-                  <button onClick={handlePagesSubMenu}>
+                  <button className='inline-flex' onClick={handlePagesSubMenu}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 relative active:animate-rotate_90 focus:animate-rotate_90">
+                      <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+                    </svg>
+                    <svg ref={minusPagesRef} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 rotate-90 absolute">
                       <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
                     </svg>
                   </button>
                 </div>
               </div>
-              {pagesSubMenu && <div className='flex flex-col gap-4 pt-4 pl-4'>
+              <div className={`pagesBox h-0 overflow-hidden`}>
+                <div className='flex flex-col gap-4 pt-4 pl-4 '>
                 {pagesList.map((list) =>
                   <a key={list.id} className='text-gray-500 text-sm font-nunito tracking-wider'>{list.name}</a>
                 )}
-              </div>}
+                </div>
+              </div>
             </div>
             <div>
               <div className='flex flex-row items-center'>
@@ -329,7 +389,7 @@ export default function Header() {
           </div>
         </div>
 
-      </Dialog>
+      </div>
     </header>
 
   )
