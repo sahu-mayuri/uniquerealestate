@@ -36,7 +36,7 @@ export default function PropertyButtonDropdown() {
         className="absolute right-0 z-10 w-full rounded-md border border-black/50 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in "
       >
         <div className="py-1">
-          {propertylist.map((list) => <MenuItem>
+          {propertylist.map((list) => <MenuItem key={list.id}>
             <a
               href="#"
               className="block pl-10 text-base font-poppins text-black data-[focus]:bg-blue-500 data-[focus]:text-white" key={list.id} onClick={() => handlePropertySelect(list)}>
