@@ -85,7 +85,7 @@ const FeatureSlider = () => {
           {/* Previous slide button */}
           <button
             type="button"
-            className="opacity-0 bg-white/90 rounded-full absolute top-1/2 left-0 z-30 flex items-center justify-center size-12 dark:bg-gray-800/30 hover:bg-color-orange group-hover:opacity-100 dark:hover:bg-gray-800/60 transform -translate-y-1/2 focus:outline-none"
+            className="opacity-0 bg-white/90 rounded-full absolute top-1/2 -left-10 z-30 flex items-center border justify-center size-12 dark:bg-gray-800/30 hover:bg-color-orange group-hover:opacity-100 dark:hover:bg-gray-800/60 transform -translate-y-1/2 focus:outline-none"
             onClick={handlePrevSlide}
           >
             <svg className="w-4 h-4 text-black dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
@@ -97,7 +97,7 @@ const FeatureSlider = () => {
           {/* Next slide button */}
           <button
             type="button"
-            className="group opacity-0 bg-white/90 rounded-full absolute top-1/2 right-0 z-30 flex items-center justify-center size-12 dark:bg-gray-800/30 hover:bg-color-orange group-hover:opacity-100 dark:hover:bg-gray-800/60 transform -translate-y-1/2 focus:outline-none"
+            className="group opacity-0 bg-white/90 rounded-full absolute top-1/2 -right-10 border z-30 flex items-center justify-center size-12 dark:bg-gray-800/30 hover:bg-color-orange group-hover:opacity-100 dark:hover:bg-gray-800/60 transform -translate-y-1/2 focus:outline-none"
             onClick={handleNextSlide}
           >
             <svg className="w-4 h-4 text-black dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
