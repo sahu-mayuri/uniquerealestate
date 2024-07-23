@@ -47,6 +47,23 @@
 .animate-fadeIn {
     animation: fadeIn 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
+
+@keyframes underline-animation {
+    0%{
+        opacity: 0;
+        width: 0%;
+       
+    }
+    100%{
+        opacity: 1;
+        width: 100%;
+        
+    }
+  }
+
+  .underline-animation{
+    animation: underline-animation 0.6s ease-out forwards;
+  }
 @keyframes fadeOut {
     0% {
         opacity: 0;
