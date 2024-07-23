@@ -17,9 +17,9 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({url , isRent ,purpose , loca
 
             {/* THIS IS THE LAYER DIV TO LOWER THE BRIGHTNESS OF THE IMAGES */}
 
-          <div id="layercontainer" className="size-full bg-black/30 absolute top-0"></div>
+          <div id="layercontainer" className="size-full bg-black/30 absolute top-0 "></div> 
 
-            <div id="content" className="w-full h-full absolute top-0 p-4 ">
+            <div id="content" className="w-full h-full absolute top-0 p-4 pointer-events-none">
                 
                 {/* TOP PART OF THE CARD*/}
 
