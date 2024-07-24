@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { gsap } from 'gsap';
 export default function NewsHoverDropdown() {
   const newsList = [
     { id: '1', name: 'News' },
@@ -7,9 +7,16 @@ export default function NewsHoverDropdown() {
     { id: '3', name: 'News Left sidebar' },
     { id: '4', name: 'News Right sidebar' },
   ];
+  function handleMouseEnter() {
+    gsap.to(".newsBox", { y: 0, duration: 0.2, display:'block', opacity: 1 });
+}
+
+function handleMouseLeave() {
+    gsap.to(".newsBox", { y: 10, duration: 0.2, display:'none', opacity: 0 });
+}
   return (
     <div>
-      <div className="relative group">
+      <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <div className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none font-montserrat">
           <div className='flex flex-row items-center'>
             <a className="my-2 text-base xl:text-lg font-semibold text-white">
@@ -21,7 +28,7 @@ export default function NewsHoverDropdown() {
               </svg></span>
           </div>
         </div>
-        <div className="absolute z-10 top-20 animate-fadeIn hidden bg-grey-200 group-hover:block">
+        <div className="absolute newsBox z-10 top-20 hidden bg-gray-200">
           <div className='w-full h-[0.340rem] bg-color-orange'></div>
           <div className="w-[14rem] px-8 pt-6 pb-6 bg-white shadow-lg">
 

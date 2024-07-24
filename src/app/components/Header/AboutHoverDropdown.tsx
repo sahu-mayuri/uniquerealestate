@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { gsap } from 'gsap';
 export default function AboutHoverDropdown() {
     const aboutList = [
         { id: '1', name: 'About' },
@@ -10,9 +10,17 @@ export default function AboutHoverDropdown() {
         { id: '6', name: 'FAQ' },
         { id: '7', name: 'Google Map Locations' },
       ];
+      function handleMouseEnter() {
+        gsap.to(".aboutBox", { y: 0, duration: 0.2, display: 'block', opacity: 1 });
+      }
+
+      function handleMouseLeave() {
+        gsap.to(".aboutBox", { y: 10, duration: 0.2, display: 'none', opacity: 0 });
+      }
+
   return (
     <div><div className="relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-    <div className="relative group">
+    <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none font-montserrat">
       <div className='flex flex-row items-center'>
               <a className="my-2 text-base xl:text-lg font-semibold text-white">
@@ -24,7 +32,7 @@ export default function AboutHoverDropdown() {
                 </svg></span>
                 </div>  
       </div>
-      <div className="absolute animate-fadeIn z-10 top-20 hidden bg-grey-200 group-hover:block">
+      <div className="absolute aboutBox hidden z-10 top-20 bg-grey-200">
         <div className='w-full h-[0.340rem] bg-color-orange'></div>
      
         <div className="w-[15rem] pl-8 pt-6 pb-6 bg-white shadow-lg">

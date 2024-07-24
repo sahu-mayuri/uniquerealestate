@@ -181,7 +181,7 @@ export default function Header() {
             </a>
           </div>
           <div className='flex items-center cursor-pointer'>
-            <button className='my-2 text-sm font-semibold text-nowrap text-white bg-color-orange px-7 py-3 hover:text-black hover:bg-white'>Add Listing</button>
+            <button className='my-1 text-lg font-semibold text-nowrap text-white bg-color-orange px-8 py-4 hover:text-black hover:bg-white'>Add Listing</button>
           </div>
 
         </div>
