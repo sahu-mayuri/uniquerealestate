@@ -48,22 +48,44 @@
     animation: fadeIn 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
-@keyframes underline-animation {
-    0%{
-        opacity: 0;
-        width: 0%;
-       
+@keyframes underline-left-to-right {
+    0% {
+        width: 0;
+        opacity: 0; 
     }
-    100%{
-        opacity: 1;
+    50%{
+        opacity: 0.5;
+    }
+    
+    100% {
         width: 100%;
-        
+        opacity: 1;
     }
-  }
+}
 
-  .underline-animation{
-    animation: underline-animation 0.6s ease-out forwards;
-  }
+@keyframes underline-right-to-left {
+    0% {
+        width: 100%;
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+.animate-left-to-right {
+    animation: underline-left-to-right 0.4s ease-in forwards;
+}
+
+.animate-right-to-left {
+    animation: underline-right-to-left 0.4s ease-out  forwards;
+}  
+  
+
 @keyframes fadeOut {
     0% {
         opacity: 0;
