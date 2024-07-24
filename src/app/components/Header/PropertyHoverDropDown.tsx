@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { gsap } from 'gsap';
 export default function PropertyHoverDropdown() {
   const propertyList = [
     { id: '1', name: 'Property' },
@@ -20,34 +20,39 @@ export default function PropertyHoverDropdown() {
 
   const [showOtherPages, setShowOtherPages] = useState(false);
 
-  const toggleOtherPages = () => {
-    setShowOtherPages(!showOtherPages);
-    const otherPageText = document.getElementById('otherpagetext');
-    const otherPageIcon = document.getElementById('otherpageicon');
-    if (otherPageText&&otherPageIcon) {
-      otherPageText.style.color = '#FF5A3C';
-      otherPageIcon.style.color = '#FF5A3C';
-    } else {
-      console.error('Element with ID "otherpagetext" not found.');
-    }
-  };
+  function handleMouseEnter() {
+    gsap.to(".propertyBox", { y: 0, duration: 0.2, display:'block', opacity: 1 });
+  }
 
-  const closeDropdown = () => {
-    setShowOtherPages(false);
+  function handleMouseLeave() {
+    gsap.to(".propertyBox", { y: 10, duration: 0.2, display:'none', opacity: 0 });
+  }
+
+  function OtherPageToggleEnter() {
+    gsap.to(".otherPageBox", { y: 0, duration: 0.2, display:'block', opacity: 1  });
     const otherPageText = document.getElementById('otherpagetext');
-    const otherPageIcon = document.getElementById('otherpageicon');
-    if (otherPageText&&otherPageIcon) {
-      otherPageText.style.color = '#6b7280';
-      otherPageIcon.style.color = '#6b7280';
-    } else {
-      console.error('Element with ID "otherpagetext" not found.');
-    }
-  };
+     const otherPageIcon = document.getElementById('otherpageicon');
+     if (otherPageText&&otherPageIcon) {
+       otherPageText.style.color = '#FF5A3C';
+       otherPageIcon.style.color = '#FF5A3C';
+     }
+     setShowOtherPages(true)
+  }
+  function OtherPageToggleLeave() {
+    gsap.to(".otherPageBox", { y: 10, duration: 0.2, display:'none', opacity: 0 });
+    const otherPageText = document.getElementById('otherpagetext');
+     const otherPageIcon = document.getElementById('otherpageicon');
+     if (otherPageText&&otherPageIcon) {
+       otherPageText.style.color = '#6b7280';
+       otherPageIcon.style.color = '#6b7280';
+     }
+     setShowOtherPages(false)
+  }
 
   return (
     <div>
       <div className="relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-        <div className="relative group" onMouseLeave={closeDropdown}>
+        <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
           <div className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none font-montserrat">
             <div className='flex flex-row items-center'>
               <a className="my-2 text-base xl:text-lg font-semibold text-white">
@@ -60,7 +65,7 @@ export default function PropertyHoverDropdown() {
               </span>
             </div>  
           </div>
-          <div className={`absolute z-10 ${showOtherPages ? 'block' : 'hidden'} animate-fadeIn top-20 bg-grey-200 group-hover:block`} onMouseLeave={closeDropdown}>
+          <div className={'absolute z-10 propertyBox hidden top-20 bg-grey-200'}>
             <div className='w-full h-[0.340rem] bg-color-orange'></div>
             <div className="w-[15rem] pl-8 pt-6 pb-6 bg-white shadow-lg">
               <div className="grid grid-cols-1 gap-5 cursor-pointer">
@@ -69,16 +74,17 @@ export default function PropertyHoverDropdown() {
                     {item.name}
                   </a>
                 ))}
-                <div className="relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-start md:flex-row group">
-                  <div className="flex flex-row items-center cursor-pointer " onMouseEnter={toggleOtherPages}>
-                    <a id='otherpagetext' className='text-gray-500 text-base font-headfont tracking-wider '>
+                <div className="relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-start md:flex-row">
+                  <div className="flex flex-row w-full items-center cursor-pointer" onMouseEnter={OtherPageToggleEnter} onMouseLeave={OtherPageToggleLeave}>
+                    <a id='otherpagetext' className='flex flex-row items-center w-full text-gray-500 text-base font-headfont tracking-wider'>
                       Other Pages 
-                    </a>
-                    <svg id='otherpageicon' className='text-gray-500 ms-14 ' stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <svg id='otherpageicon' className='text-gray-500 ms-16' stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                       <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z" />
                     </svg>
+                    </a>
+                    
                   </div>
-                  <div className={`absolute z-10 left-[13rem] ${showOtherPages ? 'block' : 'hidden'} bg-grey-200 animate-fadeIn`}>
+                  <div className='absolute z-10 left-[13rem] hidden otherPageBox bg-grey-200 ' onMouseEnter={OtherPageToggleEnter} onMouseLeave={OtherPageToggleLeave}>
                     <div className='w-full h-[0.340rem] bg-color-orange'></div>
                     <div className="w-[15rem] pl-8 pt-6 pb-6 bg-white shadow-lg">
                       <div className="grid grid-cols-1 gap-5 cursor-pointer">

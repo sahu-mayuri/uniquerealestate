@@ -63,7 +63,7 @@ const TopFooter = () => {
             <div id="bottom-container"className="w-full h-full relative lg:px-0 lg:flex bg-white">
 
               <div id="bottom" className="w-full bg-color-orange flex justify-center items-center md:justify-center md:pt-4 lg:mt-0 lg:justify-end  ">
-THIS IS
+
               <button onMouseEnter={activateAnimation} onMouseLeave={deactivateAnimation} className="overflow-hidden group flex items-center gap-1 text-[0.9rem] shadow-2xl bg-white font-popins  px-[7%] py-[4%] md:py-[2%] md:px-[4%] md:text-[1rem] lg:py-[3.5%] lg:text-[1rem] relative lg:mb-8 ">
 
                 <h1 className="group-hover">Explore Properties</h1>  {/* THIS IS ONLY TO GIVE SAE HEIGHT AND WIDTH */}
