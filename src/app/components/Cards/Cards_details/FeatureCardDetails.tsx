@@ -2,7 +2,7 @@
 export const FeatureCardDets = [
     {
       url: '/images/1.jpg',
-      purpose: 'Rent',
+      purpose: 'FOR RENT',
       location: 'Bhopal',
       price: 90,
       text: 'Luxury Vila in Rego Park',
@@ -13,7 +13,7 @@ export const FeatureCardDets = [
     },
     {
       url: '/images/4.jpg',
-      purpose: 'Sale',
+      purpose: 'FOR SALE',
       location: 'Indore',
       price: 100,
       text: 'Appartment in Mumbai',
@@ -24,7 +24,7 @@ export const FeatureCardDets = [
     },
     {
       url: '/images/6.jpg',
-      purpose: 'Rent',
+      purpose: 'FOR RENT',
       location: 'Bhopal',
       price: 90,
       text: 'Luxury Vila in Rego Park',
@@ -35,7 +35,7 @@ export const FeatureCardDets = [
     },
     {
       url: '/images/3.jpg',
-      purpose: 'Sale',
+      purpose: 'FOR SALE',
       location: 'Indore',
       price: 100,
       text: 'Appartment in Mumbai',

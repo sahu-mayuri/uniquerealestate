@@ -17,16 +17,16 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({url , isRent ,purpose , loca
 
             {/* THIS IS THE LAYER DIV TO LOWER THE BRIGHTNESS OF THE IMAGES */}
 
-          <div id="layercontainer" className="size-full bg-black/30 absolute top-0 "></div> 
+          {/* <div id="layercontainer" className="size-full bg-black/30 absolute top-0 "></div>  */}
 
-            <div id="content" className="w-full h-full absolute top-0 p-4 pointer-events-none">
+            <div id="content" className="w-full h-full absolute top-0 p-4">
                 
                 {/* TOP PART OF THE CARD*/}
 
                 <div id="top" className="w-full  flex  justify-end md:mb-32 mb-16">
 
                     {/* RENT BUTTON */}
-                    <button className={`font-nunito_ExtraBold tracking-tight text-[0.8rem] md:text-[0.9rem] text-white px-3 py-1 ${isRent ? 'bg-[#77C720]' : 'bg-red-500'}`}>{purpose}</button>
+                    <button className={`font-nunito font-medium capitalize text-[0.8rem] md:text-[0.8rem] text-white px-3 py-1 ${isRent ? 'bg-[#77C720]' : 'bg-color-orange'}`}>{purpose}</button>
                 </div>
                 <div id="btm" className="w-full flex justify-between pt-16">
                     <div id="b1" className=" flex items-center ">
@@ -71,7 +71,7 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({url , isRent ,purpose , loca
                   <div id="admin" className="flex items-center">
                      
                       <div id="text">
-                          <h1 className="font-poppins text-color-orange font-bold md:text-[85%] lg:text-[1.1rem] hover:cursor-default">{price}<span className="font-normal">/Month</span></h1>
+                          <h1 className="font-poppins text-color-orange font-bold md:text-[85%] lg:text-[1.1rem] hover:cursor-default">$ {price}<span className="font-poppins font-medium text-[0.85rem]">/Month</span></h1>
                       </div>
                   </div>
                   
