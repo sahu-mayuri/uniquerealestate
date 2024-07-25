@@ -44,7 +44,7 @@ const TopFooter = () => {
         <div id="top" className="w-full h-36 bg-light-white"></div>
         <div id="bottom" className="w-full h-44 bg-[#171B2A] "></div>
 
-        <div id="top-layer" className=" w-[91%] bg-color-orange absolute top-0 left-4 xl:left-6 px-5 py-[13%] sm:py-[9%] md:w-[80%] md:py-[5%] md:ml-16 md:mt-7 lg:mt-9 lg:w-[87%]  lg:ml-16 lg:px-12 lg:pt-16 lg:pb-8" >
+        <div id="top-layer" className=" w-[92%] bg-color-orange absolute top-0 left-4 custom_small:left-7 md:left-[75px] 2xl:left-24 px-5 py-[13%] sm:py-[9%] md:w-[80%] md:py-[5%] md:mt-7 lg:mt-9 lg:w-[87%]  lg:px-12 lg:pt-16 lg:pb-8 " >
           <div id="dets" className="w-full h-full  flex flex-col items-center justify-center md:flex md:items-center lg:flex lg:flex-row lg:px-4 ">
             <div id="upper" className="lg:w-[120%] mb-4">
               <h1 className="font-popins text-2xl font-extrabold  text-white mb-3 md:text-[2rem] lg:text-[2.2rem] ">
@@ -75,7 +75,7 @@ const TopFooter = () => {
                 <svg ref={SVGRef} className="size-5 absolute z-10 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" ><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" /></svg>
                 </div>
                 {/* THIS IS ANIMATING SLIDE */}
-                <div  id="animation" ref={buttonRef}  className="hidden absolute w-[500px] h-full  group-hover:inline bg-black top-0 left-[-500px] "></div>
+                <div  id="animation" ref={buttonRef}  className=" absolute w-[500px] h-full  group-hover:inline bg-black top-0 left-[-500px] "></div>
               </button>
               </div>
             </div>

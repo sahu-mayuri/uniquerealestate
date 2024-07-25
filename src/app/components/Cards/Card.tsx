@@ -8,10 +8,10 @@ const Card = (props:CardProps) => {
     return (
       <div id="card-container" className="w-full bg-white">
           <div id="image-container" className="w-full h-[13.5rem] md:h-[18rem] overflow-hidden ">
-              <img className=" w-full h-full object-cover hover:scale-110  hover:text-color-orange hover:cursor-pointer transition ease-in duration-200" src={props.url} alt="" />
+              <img className=" w-full h-full object-cover hover:scale-110  hover:text-color-orange hover:cursor-pointer transition ease-in duration-300" src={props.url} alt="" />
           </div>
           <div id="dets-container" className="w-full p-4">
-              <div id="icons" className="p-2 flex gap-4 mt-2">
+              <div id="icons" className="p-2 flex gap-10 mt-2">
                   <div id="admin" className="flex items-center">
                       <div className="icon">
                           <svg className="text-color-orange text-[0.75rem] me-2" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"></path></svg>
@@ -29,8 +29,8 @@ const Card = (props:CardProps) => {
                       </div>
                   </div>
               </div>  
-              <div id="dets" className="w-full">
-                  <h1 className="font-poppins p-2 text-[100%] font-semibold md:text-[115%] lg:text-[115%] lg:font-bold hover:text-color-orange hover:cursor-pointer">{props.text}</h1>
+              <div id="dets" className="w-full 2xl:w-[85%]">
+                  <h1 className="py-2 pl-2 text-[100%] font-poppins md:text-[115%] lg:text-[1.3rem] lg:font-bold text-black/90 hover:text-color-orange hover:cursor-pointer"><span>{props.text}</span></h1>
               </div>
               {/* HORIZONTAL LINE!! */}
               <hr className="text-gray-400 my-3 ml-2 w-[94%] self-center" />
@@ -45,7 +45,7 @@ const Card = (props:CardProps) => {
                   </div>
                   <div id="location" className="flex">
                       <div id="text">
-                          <h1 className="font-nunito_SemiBold text-[75%] md:text-[85%] lg:text-[85%] font-semibold text-color-orange hover:cursor-pointer">READ MORE</h1>
+                          <h1 className="font-nunito font-medium uppercase  text-[75%] md:text-[85%] lg:text-[85%]  text-color-orange hover:cursor-pointer">READ MORE</h1>
                       </div>
                   </div>
               </div>

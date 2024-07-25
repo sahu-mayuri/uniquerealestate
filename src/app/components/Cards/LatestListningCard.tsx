@@ -49,7 +49,7 @@ const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,
               </div>
               
               <div id="dets" className="w-full">
-                  <h1 className="font-popins p-2 pb-4 text-[1.1rem] font-bold md:text-[115%] lgi:text-[115%] lg:font-bold">{text}</h1>
+                  <h1 className="font-popins p-2 pb-4 text-[1.1rem] font-bold md:text-[115%] lgi:text-[115%] lg:font-bold hover:text-color-orange transition ease-in-out duration-200 hover:cursor-pointer">{text}</h1>
               </div>
 
                 {/* THIS IS ICONS */}
@@ -58,7 +58,7 @@ const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,
                         <svg className=" text-[0.85rem] md:text-[1rem] custom_screen:text-[0.9rem] mr-1 text-color-orange" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" > <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path> </svg>
                         </div>
                         <div id="text">
-                            <h1 className="font-nunitoLight font-semibold text-gray-500 text-[0.85rem] md:text-[0.95rem]">{location}</h1>
+                            <h1 className="font-nunitoLight font-semibold text-gray-500 text-[0.85rem] md:text-[0.95rem] hover:text-color-orange transition ease-in-out duration-200 hover:cursor-pointer">{location}</h1>
                         </div>
               </div>
 
@@ -93,17 +93,17 @@ const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,
               <div id="popover" className="mb-5 w-1/2 mt-5 md:mt-0 md:px-2 lg:px-4 flex items-center justify-between ">
 
                 <div id="box" className="size-10 ">
-                    <button className="size-full flex justify-center items-center bg-[#F3EEEE]">
+                    <button className="size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange">
                         <img className="size-4 object-contain" src="/FlaticonSVG/two-way.png" alt="" />
                     </button>
                 </div>
                 <div id="box" className="size-10 ">
-                    <button className="size-full flex justify-center items-center bg-[#F3EEEE]">
+                    <button className="size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange">
                         <img className="size-4 object-contain" src="/FlaticonSVG/heart.png" alt="" />
                     </button>
                 </div>
                 <div id="box" className="size-10 ">
-                    <button className="size-full flex justify-center items-center bg-[#F3EEEE]">
+                    <button className="size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange">
                         <img className="size-4 object-contain" src="/FlaticonSVG/add.png" alt="" />
                     </button>
                 </div>
