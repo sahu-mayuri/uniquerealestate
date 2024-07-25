@@ -19,8 +19,8 @@ export default function LanguageHoverDropdown() {
     return (
         <div>
             <div className="relative cursor-pointer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                <div className='w-full flex flex-row items-center  md:justify-end md:pr-0 lg:pr-10'>
-                    <a className='font-nunito_SemiBold text-white text-[0.813rem] md:text-sm'>
+                <div className='w-full flex flex-row items-center  md:justify-end md:pr-0'>
+                    <a className='font-nunito font-medium text-white text-[0.813rem] md:text-sm'>
                         English
                     </a>
                     <svg className="text-white size-4 lg:size-5" stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
