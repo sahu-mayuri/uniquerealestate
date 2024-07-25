@@ -22,7 +22,7 @@ export default function NavBarHead() {
                 <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                 <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
               </svg>
-              <p className='text-white font-nunito_SemiBold text-[0.813rem] md:text-sm items-center'>
+              <p className='text-white font-nunito font-medium text-[0.813rem] md:text-sm items-center'>
                 info@webmail.com
               </p>
             </div>
@@ -32,7 +32,7 @@ export default function NavBarHead() {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 mr-1 text-color-orange">
                 <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
               </svg>
-              <p className='text-white text-nowrap font-nunito_SemiBold text-[0.813rem] md:text-sm'>
+              <p className='text-white text-nowrap font-nunito font-medium text-[0.813rem] md:text-sm'>
                 15/A, Nest Tower, NYC
               </p>
             </div>
@@ -42,7 +42,7 @@ export default function NavBarHead() {
           <div className='w-full flex items-end justify-end'>
             <LanguageHoverDropdown />
           </div>
-          <div className='w-full lg:w-auto flex items-center justify-start pl-10 lg:justify-end '>
+          <div className='w-full lg:w-auto flex items-center justify-start pl-10 lg:justify-end'>
             <div className='px-1 lg:px-1.5 cursor-pointer'>
 
               <svg className='w-3 h-3 lg:w-3.5 lg:h-3.5 text-white' stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" /></svg>
