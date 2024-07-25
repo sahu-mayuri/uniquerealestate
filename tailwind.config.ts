@@ -55,6 +55,7 @@ const config: Config = {
         nunito_Black: ['Nunito Black'],
       },
       screens: {
+        custom_bigScreen: '1350px',
         custom_screen: '1200px',
         custom_small: '570px'
       },
