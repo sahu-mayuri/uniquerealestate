@@ -1,3 +1,9 @@
+"use client"
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { useRef } from "react";
+
+
 interface FeaturesCardProps{
     url:string;
     purpose:string;
@@ -10,48 +16,75 @@ interface FeaturesCardProps{
     isRent:Boolean;
 }
 const FeaturesCard: React.FC<FeaturesCardProps> = ({url , isRent ,purpose , location , price , text, Number_of_bathroom, Number_of_bedroom , owner_name}) => {
+
+    const Hover = useRef<HTMLDivElement>(null);
+
+  function handleMouseEnter() {
+    gsap.to(Hover.current, {
+      color: "red", // Change text color to red
+      svgFill: "red", // Change SVG fill color to red
+      duration: 0.3, // Animation duration
+    });
+  }
+
+  function handleMouseLeave() {
+    gsap.to(Hover.current, {
+      color: "initial", // Reset text color
+      svgFill: "initial", // Reset SVG fill color
+      duration: 0.3, // Animation duration
+    });
+  }
+
     return (
+
+
       <div id="card-container" className="w-full bg-white shadow-lg">
 
           <div id="image-container" className="w-full h-[13.5rem] md:h-[18rem] overflow-hidden relative ">
 
             {/* THIS IS THE LAYER DIV TO LOWER THE BRIGHTNESS OF THE IMAGES */}
 
-          {/* <div id="layercontainer" className="size-full bg-black/30 absolute top-0 "></div>  */}
+          <div id="layercontainer" className="w-full h-16 bg-black/30 absolute bottom-0 custom-gradient pointer-events-none"></div> 
 
-            <div id="content" className="w-full h-full absolute top-0 p-4">
+            <div id="content" className="w-full h-full absolute top-0 py-4 ">
                 
                 {/* TOP PART OF THE CARD*/}
 
-                <div id="top" className="w-full  flex  justify-end md:mb-32 mb-16">
-
-                    {/* RENT BUTTON */}
-                    <button className={`font-nunito font-medium capitalize text-[0.8rem] md:text-[0.8rem] text-white px-3 py-1 ${isRent ? 'bg-[#77C720]' : 'bg-color-orange'}`}>{purpose}</button>
+                {/* RENT BUTTON */}
+                <div id="top" className="w-full  flex mr-10 justify-end relative  pr-6">
+                 <button className={`font-nunito font-medium uppercase  text-[0.8rem] md:text-[0.8rem] text-white px-3 py-1  ${isRent ? 'bg-[#77C720]' : 'bg-color-orange'}`}>{purpose}</button>
                 </div>
-                <div id="btm" className="w-full flex justify-between pt-16">
-                    <div id="b1" className=" flex items-center ">
+                <div id="btm" className="w-full flex justify-between absolute bottom-[15px] px-6  ">
+                    <div id="b1" 
+                    // onMouseEnter={handleMouseEnter}
+                    // onMouseLeave={handleMouseLeave}
+                    // ref={Hover}
+                    className=" flex items-center hover:cursor-pointer">
                         
                         <div id="svg">
-                        <svg className=" text-[0.85rem] md:text-[1rem] custom_screen:text-[1rem] mr-1 text-white" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" > <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path> </svg>
+                        <svg className="   text-[0.85rem] md:text-[1rem] custom_screen:text-[0.9rem] mr-1 text-white" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" > <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path> </svg>
                         </div>
                         <div id="text">
-                            <h1 className="font-nunitoLight font-semibold text-white text-[0.85rem] md:text-[1rem]">{location}</h1>
+                            <h1 className="  font-nunitoLight font-semibold text-white text-[0.85rem] md:text-[0.9rem]">{location}</h1>
                         </div>
                     </div>
-                    <div id="b2" className="flex gap-2  ">
-                        <div id="Icons" className="flex bg-white/30 items-center py-1 px-2">
+
+
+                    <div id="b2"  className="flex gap-2 ">
+                        <div id="Icons1"  className="group flex bg-white/30 items-center py-1 px-2 hover:cursor-pointer hover:text-color-orange">
                             <div id="svg" className="">
-                            <svg className="me-2 text-white text-[0.8rem] md:text-[1rem]" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>
+                                <svg className="  me-2 text-white text-[0.8rem] md:text-[0.9rem]" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>
                             </div>
-                            <div id="text" ><h1 className="text-white font-nunito_Medium text-[0.8rem] md:text-[1rem]">3</h1></div>
+
+                            <div id="text" ><h1 className= " text-white font-nunito_Medium text-[0.8rem] md:text-[0.9rem] hover:text-color-orange">3</h1></div>
                         </div>
 
-                        <div id="Icons" className="flex bg-white/30 items-center py-1 px-2">
+                        <div id="Icons2" className="flex bg-white/30 items-center py-1 px-2 hover:cursor-pointer">
                             <div id="svg" className="">
-                            <svg className="me-2 text-white text-[0.8rem] md:text-[1rem]" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M488 64h-8v20c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12V64H96v20c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12V64h-8C10.7 64 0 74.7 0 88v336c0 13.3 10.7 24 24 24h8v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h320v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h8c13.3 0 24-10.7 24-24V88c0-13.3-10.7-24-24-24zM96 372c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm272 208c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm0-168c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm112 152c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40z"></path></svg>
-
+                                <svg className="  me-2 text-white text-[0.8rem] md:text-[0.9rem]" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M488 64h-8v20c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12V64H96v20c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12V64h-8C10.7 64 0 74.7 0 88v336c0 13.3 10.7 24 24 24h8v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h320v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h8c13.3 0 24-10.7 24-24V88c0-13.3-10.7-24-24-24zM96 372c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm272 208c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm0-168c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm112 152c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40z"></path></svg>
                             </div>
-                            <div id="text" ><h1 className="text-white font-nunito_Medium text-[0.8rem] md:text-[1rem]">3</h1></div>
+
+                            <div id="text" ><h1 className= " text-white font-nunito_Medium text-[0.8rem] md:text-[0.9rem]">3</h1></div>
                         </div>
                     </div>
                 </div>
