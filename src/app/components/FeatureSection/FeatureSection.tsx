@@ -92,8 +92,8 @@ const FeatureSlider = () => {
     <div>
       <TopSection top={'Properties'} bottom={'Feature Listing'} />
       
-      <div id="slider" className='w-full px-4 lg:px-9 2xl:px-14'>
-        <div id="sliding-div" className='group w-full relative bg-[#F9FAFB] lg:px-2'>
+      <div id="slider" className='w-full px-4 lg:px-8 2xl:px-14'>
+        <div id="sliding-div" className='group w-full relative bg-[#F9FAFB] md:px-2'>
           <div ref={carouselRef} id="cards" className='w-full flex pb-2 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide'>
             {slides.map((items, index) => (
               <div
