@@ -2,7 +2,7 @@
 export const LatestListingCardDets = [
     {
       url: '/images/1.jpg',
-      purpose: 'Rent',
+      purpose: 'For Rent',
       location: 'Bhopal',
       price: 90,
       text: 'Luxury Vila in Rego Park',
@@ -13,7 +13,7 @@ export const LatestListingCardDets = [
     },
     {
       url: '/images/7.jpg',
-      purpose: 'Sale',
+      purpose: 'For Sale',
       location: 'Indore',
       price: 100,
       text: 'Appartment in Mumbai',
@@ -24,7 +24,7 @@ export const LatestListingCardDets = [
     },
     {
       url: '/images/3.jpg',
-      purpose: 'Rent',
+      purpose: 'For Rent',
       location: 'Bhopal',
       price: 90,
       text: 'Luxury Vila in Rego Park',
@@ -35,7 +35,7 @@ export const LatestListingCardDets = [
     },
     {
       url: '/images/5.jpg',
-      purpose: 'Sale',
+      purpose: 'For Sale',
       location: 'Indore',
       price: 100,
       text: 'Appartment in Mumbai',
@@ -46,7 +46,7 @@ export const LatestListingCardDets = [
     },
     {
       url: '/images/6.jpg',
-      purpose: 'Sale',
+      purpose: 'For Sale',
       location: 'Indore',
       price: 100,
       text: 'Appartment in Mumbai',
@@ -57,7 +57,7 @@ export const LatestListingCardDets = [
     },
     {
       url: '/images/1.jpg',
-      purpose: 'Rent',
+      purpose: 'For Rent',
       location: 'Indore',
       price: 100,
       text: 'Appartment in Mumbai',

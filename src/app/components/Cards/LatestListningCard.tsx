@@ -1,3 +1,7 @@
+"use client"
+import { gsap } from "gsap";
+import { MutableRefObject, useRef } from "react";
+
 interface LatestListingProps{
     url:string;
     purpose:string;
@@ -10,16 +14,46 @@ interface LatestListingProps{
     isRent:Boolean;
 }
 const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,price,text,Number_of_bathroom,Number_of_bedroom,owner_name,isRent}) => {
+
+    const box1 = useRef(null);
+    const box2 = useRef(null);
+    const box3 = useRef(null);
+    const cardImgRef = useRef(null)
+
+    const handleAnimation = (ref: MutableRefObject<null>, action: string) => {
+        gsap.to(ref.current, {
+          duration: 0.1,
+          display: action === 'enter' ? 'inline' : 'none'
+        });
+      };
+      
+    const handleImageScaleAnimation = (action: string) => {
+      if (cardImgRef.current) {
+        gsap.to(cardImgRef.current, {
+          scale: action === "enter" ? 1.1 : 1, // Scale up on enter, back to normal on exit
+          duration: 0.5,
+          ease: "power1.out", // Optional easing function
+        });
+      }
+    };
+
     return (
-      <div id="card-container" className="w-full bg-white shadow-xl">
+
+        
+      <div
+        onMouseEnter={() => handleImageScaleAnimation('enter')}
+        onMouseLeave={() => handleImageScaleAnimation('exit')}  
+        id="card-container" 
+        className="w-full bg-white shadow-xl"
+      >
 
           <div id="image-container" className="w-full h-[13.5rem] md:h-[18rem] overflow-hidden relative ">
 
             {/* THIS IS THE LAYER DIV TO LOWER THE BRIGHTNESS OF THE IMAGES */}
 
-          <div id="layercontainer" className="size-full bg-black/20 absolute top-0"></div>
+          {/* <div id="layercontainer" className="size-full bg-black/20 absolute top-0"></div> */}
 
-            <div id="content" className="w-full h-full absolute top-0 p-4 ">
+            <div id="content" className="w-full h-full absolute z-10 top-0 p-4 pointer-events-none">
                 
                 {/* TOP PART OF THE CARD*/}
 
@@ -33,9 +67,8 @@ const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,
                
 
             </div>
-            
-            <img className=" w-full h-full object-cover hover:scale-110 transition duration-500 ease-in-out " src={url} alt="" />
-          </div>
+              <img ref={cardImgRef} className=" w-full h-full object-cover " src={url} alt="" />
+            </div>
 
 
           {/* This is the middle Section of card */}
@@ -45,11 +78,11 @@ const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,
                 {/* THE RENT OR SELL BUTTON */}
 
               <div id="icons" className="p-2  mt-2">
-                  <button className={`font-nunito_ExtraBold tracking-tight text-[0.8rem] md:text-[0.9rem] text-white px-3 py-1 ${isRent ? 'bg-[#77C720]' : 'bg-red-500'}`}>{purpose}</button>
+                  <button className={`uppercase font-nunito font-medium  tracking-tight text-[0.8rem] md:text-[1rem]  px-3 py-1  ${isRent ? 'text-white' : 'text-color-orange'}  ${isRent ? 'bg-[#77C720]' : ''}`}>{purpose}</button>
               </div>
               
               <div id="dets" className="w-full">
-                  <h1 className="font-popins p-2 pb-4 text-[1.1rem] font-bold md:text-[115%] lgi:text-[115%] lg:font-bold hover:text-color-orange transition ease-in-out duration-200 hover:cursor-pointer">{text}</h1>
+                  <h1 className={`font-popins p-2 pb-4 text-[1.1rem] font-bold md:text-[115%] lgi:text-[115%] lg:font-bold hover:text-color-orange transition ease-in-out duration-200 hover:cursor-pointer `}>{text}</h1>
               </div>
 
                 {/* THIS IS ICONS */}
@@ -62,29 +95,29 @@ const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,
                         </div>
               </div>
 
-              <div id="dets" className=" flex gap-2 ml-2 mb-6">
-                <div id="box" className=" pr-4  flex gap-2">
-                    <div id="top" className="flex gap-2 items-center">
+              <div id="dets" className=" flex ml-2 mb-6 ">
+                <div id="box" className=" pr-4 flex gap-1 ">
+                    <div id="top" >
                         <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">{Number_of_bedroom}</h1></div>
                     </div>
                     <div id="btm">
-                        <h1 className="font-nunito_Medium font-medium text-gray-500 text-[0.9rem]">Bedrooms</h1>
+                        <h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">Bedrooms</h1>
                     </div>
                 </div>
-                <div id="box" className=" pr-4  flex gap-2">
-                    <div id="top" className="flex gap-2 items-center">
+                <div id="box" className=" pr-4 flex gap-1 ">
+                    <div id="top" >
                         <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">{Number_of_bathroom}</h1></div>
                     </div>
                     <div id="btm">
-                        <h1 className="font-nunito_Medium font-medium text-gray-500 text-[0.9rem]">Bathroom</h1>
+                        <h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">Bathroom</h1>
                     </div>
                 </div>
-                <div id="box" className=" pr-4  flex gap-2">
-                    <div id="top" className="flex gap-2 items-center">
+                <div id="box" className=" pr-4 flex gap-1 ">
+                    <div id="top" >
                         <div id="text"><h1 className="font-nunito_Medium font-bold text-gray-500 text-[0.9rem]">3450</h1></div>
                     </div>
                     <div id="btm">
-                        <h1 className="font-nunito_Medium font-medium text-gray-500  text-[0.9rem]">Sq. Ft</h1>
+                        <h1 className="font-nunito_Medium  font-bold text-gray-500  text-[0.9rem]">Sq. Ft</h1>
                     </div>
                 </div>
                 
@@ -92,19 +125,35 @@ const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,
               </div>
               <div id="popover" className="mb-5 w-1/2 mt-5 md:mt-0 md:px-2 lg:px-4 flex items-center justify-between ">
 
-                <div id="box" className="size-10 ">
-                    <button className="size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange">
-                        <img className="size-4 object-contain" src="/FlaticonSVG/two-way.png" alt="" />
+              <div id="box" className="size-9 relative">
+
+                    <button
+                      onMouseEnter={() => handleAnimation(box1, 'enter')}
+                      onMouseLeave={() => handleAnimation(box1, 'exit')}
+                      className="relative size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange transition ease-in-out duration-500"
+                      >
+                      <img className="size-4 object-contain" src="/FlaticonSVG/two-way.png" alt="" />
+                      <img ref={box1} className="hidden size-4 object-contain absolute" src="/FlaticonSVG/white_two-way.png" alt="" />
                     </button>
                 </div>
-                <div id="box" className="size-10 ">
-                    <button className="size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange">
+
+                <div id="box" className="size-9 ">
+                    <button
+                      onMouseEnter={() => handleAnimation(box2, 'enter')}
+                      onMouseLeave={() => handleAnimation(box2, 'exit')}
+                      className="relative size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange transition ease-in-out duration-500">
                         <img className="size-4 object-contain" src="/FlaticonSVG/heart.png" alt="" />
+                        <img ref={box2} className=" hidden size-4 object-contain absolute" src="/FlaticonSVG/white-heart.png" alt="" />
                     </button>
                 </div>
-                <div id="box" className="size-10 ">
-                    <button className="size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange">
-                        <img className="size-4 object-contain" src="/FlaticonSVG/add.png" alt="" />
+
+                <div id="box" className="size-9 ">
+                    <button
+                      onMouseEnter={() => handleAnimation(box3, 'enter')}
+                      onMouseLeave={() => handleAnimation(box3, 'exit')}
+                     className="relative size-full flex justify-center items-center bg-[#F3EEEE] hover:bg-color-orange transition ease-in-out duration-500">
+                        <img className=" size-4 object-contain" src="/FlaticonSVG/add.png" alt="" />
+                        <img ref={box3} className=" hidden  size-4 object-contain absolute" src="/FlaticonSVG/white-add.png" alt="" />
                     </button>
                 </div>
 
@@ -117,7 +166,7 @@ const  LatestListingCard: React.FC<LatestListingProps> = ({url,purpose,location,
 
               <div id="bottom-section" className="w-full md:flex ">
 
-              <h1 className="font-poppins ml-2 text-color-orange font-bold md:text-[85%] lg:text-[1rem]">{price} <span className="font-normal">/Month</span></h1>
+              <h1 className="font-poppins ml-2 text-color-orange font-bold md:text-[85%] lg:text-[1rem]"><span>$</span>{price} <span className="font-normal">/Month</span></h1>
                 
               </div>
           </div>

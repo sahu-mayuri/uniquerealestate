@@ -1,8 +1,7 @@
 "use client"
 
-import React, {  useRef, useState } from 'react'
+import React, {  useRef } from 'react'
 import CopyRight from './CopyRight'
-import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 
 const Footer = () => {
