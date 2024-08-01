@@ -87,40 +87,14 @@ const Footer = () => {
                   </h5>
                   <ul className="mb-16 list-none  text-start cursor-pointer font-nunito_Medium ">
 
-                  {company.map((item, index) => (
-                <li
-                  key={index}
-                  ref={(el) => (el && (LiRefC2.current[index] = el))}
-                  onMouseEnter={() => activateAnimation(LiRefC2.current[index])}
-                  onMouseLeave={() => deactivateAnimation(LiRefC2.current[index])}
-                  className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                >
-                  <div id="slash">
-                    <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-color-orange">//</h1>
-                  </div>
-                  <a className="dark:text-neutral-200 hover:text-color-orange">{item}</a>
-                </li>
-              ))}
+                 
                       
                   </ul>
             </div>
             <div id='c3' className='w-full custom_screen:w-[18%] h-full lg:mt-2' >
             <h5 className=" font-poppins font-bold mb-[1.5rem] text-[1.4rem]  text-start text-white "> Services</h5>
                   <ul className="mb-16 list-none  text-start cursor-pointer font-nunito_Medium">
-                  {Services.map((item, index) => (
-                <li
-                  key={index}
-                  ref={(el) => (el && (LiRefC3.current[index] = el))}
-                  onMouseEnter={() => activateAnimation(LiRefC3.current[index])}
-                  onMouseLeave={() => deactivateAnimation(LiRefC3.current[index])}
-                  className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                >
-                  <div id="slash">
-                    <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-color-orange">//</h1>
-                  </div>
-                  <a className="dark:text-neutral-200 hover:text-color-orange">{item}</a>
-                </li>
-              ))}
+                  
 
                   </ul>
             </div>
@@ -132,20 +106,7 @@ const Footer = () => {
                   <ul className="mb-16 list-none cursor-pointer font-nunito_Medium">
                     <ul className="mb-0 list-none  text-start cursor-pointer relative">
 
-                    {CustomerCare.map((item, index) => (
-                <li
-                  key={index}
-                  ref={(el) => (el && (LiRefC4.current[index] = el))}
-                  onMouseEnter={() => activateAnimation(LiRefC4.current[index])}
-                  onMouseLeave={() => deactivateAnimation(LiRefC4.current[index])}
-                  className="relative mb-[0.9rem] group flex text-[0.9rem] md:text-[1rem] custom_screen:mb-[1.2rem] custom_screen:text-[1rem]"
-                >
-                  <div id="slash">
-                    <h1 className="w-6 px-2 absolute -left-[25px] hidden group-hover:inline text-color-orange">//</h1>
-                  </div>
-                  <a className="dark:text-neutral-200 hover:text-color-orange">{item}</a>
-                </li>
-              ))}
+                    
                       
                     </ul>
                   </ul>
